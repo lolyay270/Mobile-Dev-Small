@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsw0xxj4d5f00"]
+
+[ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="1_5c8yu"]
+
+[node name="Fish" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5c8yu")
