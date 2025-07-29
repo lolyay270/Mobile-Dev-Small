@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsw0xxj4d5f00"]
+[gd_scene load_steps=4 format=3 uid="uid://bsw0xxj4d5f00"]
 
 [ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="1_5c8yu"]
+[ext_resource type="Script" uid="uid://ba3uany53ndkk" path="res://scripts/fish.gd" id="1_mmmkr"]
 
-[node name="Fish" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmmkr"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_mmmkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mmmkr")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_5c8yu")

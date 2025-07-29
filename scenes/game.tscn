@@ -30,4 +30,3 @@ stretch_mode = 3
 [node name="background" type="TextureRect" parent="AspectRatioContainer"]
 layout_mode = 2
 texture = ExtResource("1_5khgj")
-stretch_mode = 6
