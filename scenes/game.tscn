@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://btxwjf1oh0f2p"]
+[gd_scene load_steps=5 format=3 uid="uid://btxwjf1oh0f2p"]
 
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_5khgj"]
 [ext_resource type="Script" uid="uid://ceo586xslgpb0" path="res://scripts/gameManager.gd" id="1_hinrk"]
 [ext_resource type="Script" uid="uid://chvvopsvkk6yx" path="res://scripts/spawner.gd" id="2_31v75"]
+[ext_resource type="PackedScene" uid="uid://bsw0xxj4d5f00" path="res://objects/fish.tscn" id="4_lbhrr"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -28,5 +29,9 @@ grow_vertical = 2
 stretch_mode = 3
 
 [node name="background" type="TextureRect" parent="AspectRatioContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("1_5khgj")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(0, 900)

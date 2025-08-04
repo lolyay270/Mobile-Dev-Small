@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmmkr"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource("1_mmmkr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
