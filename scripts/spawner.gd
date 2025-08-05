@@ -32,9 +32,9 @@ func _process(delta: float) -> void:
 		var fish = fish1.instantiate()
 		add_child(fish)
 		
-		GiveFishRandomValues(fish)
+		#GiveFishRandomValues(fish)
 		
-		fish.Start()
+		#fish.Start()
 		
 		# reset timer vars
 		lastSpawn = gameManager.runTime
