@@ -19,20 +19,20 @@ var lastSpawn: float = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SetRandomDelay()
-	ySpawnPos = viewportSize.y + 250
+	
+	viewportSize = Vector2(get_viewport().size)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	viewportSize = Vector2(get_viewport().size)
-
 	if (lastSpawn + delay <= gameManager.runTime):
 		
 		#spawn object
 		var fish = fish1.instantiate()
 		add_child(fish)
 		
-		#GiveFishRandomValues(fish)
+		ChangeFishSpawn(fish)
+		ChangeFishEnd(fish)
 		
 		#fish.Start()
 		
@@ -41,32 +41,32 @@ func _process(delta: float) -> void:
 		SetRandomDelay()
 
 
-func GiveFishRandomValues(fish):
-	#left half or right spawn?
+# move where the fish spawns/jumps from
+func ChangeFishSpawn(fish: Path2D):
+	#left or right half spawn?
 	var side = randf()
-	var posMin
-	var posMax
+	var xMin
+	var xMax
+	var yMin # y = 0 is top of screen
+	var pathFollow = fish.get_child(0) # get PathFollow2D
 	
 	# spawn position (within the left/right halfs of screen) randomisation
-	if (side < sideRatio):
-		fish.spawnLeft = true
-		posMin = viewportSize.x * spawnZonePadding
-		posMax = (viewportSize.x / 2) - spawnZonePadding
-	else:
-		fish.spawnLeft = false
-		posMin = (viewportSize.x / 2) + spawnZonePadding
-		posMax = viewportSize.x - (viewportSize.x * spawnZonePadding) 
+	if (side < sideRatio): #spawn left
+		xMin = 0 
+		xMax = (viewportSize.x / 2)
+	else: #spawn right
+		fish.scale.x *= -1 # flip whole fish object to jump to the left
+		
+		#THESE VALUES NEED ADJUSTING!!!
+		xMin = viewportSize.x + (viewportSize.x / 2) 
+		xMax = viewportSize.x * 2
 	
-	var xPos = randf_range(posMin, posMax)
-	fish.transform.origin = Vector2(xPos, ySpawnPos)
-	
-	if (fish.spawnLeft):
-		fish.horDistance = viewportSize.x - xPos - spawnZonePadding
-	else:
-		fish.horDistance = xPos - spawnZonePadding
-	
-	fish.vertDistance = viewportSize.y - spawnZonePadding
-	fish.ySpawnPos = ySpawnPos
+	var xPos = randf_range(xMin, xMax)
+	fish.transform.origin = Vector2(xPos, 0)
+
+
+func ChangeFishEnd(fish: Path2D):
+	pass
 
 func SetRandomDelay() -> void:
 	delay = randf_range(minTime, maxTime)

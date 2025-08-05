@@ -1,5 +1,6 @@
 extends PathFollow2D
 
+@export var move: bool = false
 @export var speed: int = 700
 @export var gravity: float = 3
 var curSpeed;
