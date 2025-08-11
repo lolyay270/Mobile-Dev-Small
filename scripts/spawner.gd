@@ -9,11 +9,11 @@ const minTime: float = .1
 const maxTime: float = 1
 
 const sideRatio: float = 0.5 # 50% left side spawns, 50% right
-const spawnZoneCenterOverlap: float = 0.1 # percent of screen that can have both sides spawn in
-const topScreenPadding: float = 0.1 # percent of top of screen that the fish cant jump into
+const spawnZoneCenterOverlap: float = 0.0 # percent of screen that can have both sides spawn in
+const topScreenPadding: float = -0.1 # percent of top of screen that the fish cant jump into
 var ySpawnPos: float # spawn location of fish object
 var jumpHeightMax: float # how much of the screen height the fish is allowed to jump
-const minDistances: Vector2 = Vector2(0.2, 0.4) # percent of screen that is minimum distances traveled
+var minDistances: Vector2 # percent of screen that is minimum distances traveled
 
 var delay: float
 var lastSpawn: float = 0
@@ -24,8 +24,9 @@ func _ready() -> void:
 	SetRandomDelay()
 	
 	viewportSize = Vector2(get_viewport().size)
-	ySpawnPos = viewportSize.y # fish 0,0 is top left screen corner
-	jumpHeightMax = viewportSize.y * topScreenPadding
+	ySpawnPos = viewportSize.y + 200 # fish 0,0 is top left screen corner
+	jumpHeightMax = ySpawnPos * topScreenPadding
+	minDistances = Vector2(0.4 * viewportSize.x, viewportSize.y - (0.4 * ySpawnPos)) #top of screen is 0, bottom is 720
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,34 +59,33 @@ func ChangeFishSpawn(fish: Node2D):
 	
 	# spawn position (within the left/right halfs of screen) randomisation
 	if (side < sideRatio): #spawn left
-		xMin = 0 #left wall
+		xMin = 0 
 		xMax = viewportSize.x / 2 + viewportSize.x * spawnZoneCenterOverlap
 		fish.isLeftSpawn = true
 	
 	else: #spawn right
 		fish.isLeftSpawn = false
 		fish.scale.x *= -1 # flip whole fish object to jump to the left
-		xMin = viewportSize.x / 2 - viewportSize.x * spawnZoneCenterOverlap
-		xMax = viewportSize.x #right wall
+		xMin = viewportSize.x / 2 - viewportSize.x * spawnZoneCenterOverlap 
+		xMax = viewportSize.x 
 	
 	var xPos = randf_range(xMin, xMax)
 	fish.transform.origin = Vector2(xPos, ySpawnPos)
 
 
 func ChangeFishEnd(fish: Node2D, path: Path2D):
-	fish
 	var xMaxDist
-	var yDist 
 	
 	if (fish.isLeftSpawn):
 		xMaxDist = viewportSize.x - fish.position.x
-		yDist = jumpHeightMax
-	
 	else:
 		xMaxDist = fish.position.x
-		yDist = jumpHeightMax
 	
-	fish.ChangePath(xMaxDist, yDist)
+	var xMinDist = minDistances.x
+	var xDist = randf_range(xMinDist, xMaxDist)
+	var yDist = randf_range(minDistances.y, jumpHeightMax)
+	
+	fish.ChangePath(xDist, yDist)
 
 func SetRandomDelay() -> void:
 	delay = randf_range(minTime, maxTime)

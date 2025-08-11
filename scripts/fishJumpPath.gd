@@ -20,7 +20,7 @@ func Start() -> void:
 		var pathLength = path.curve.get_baked_length()
 		var half = pathLength / 2
 		var frames = half / gravity #frames until 0 speed
-		startSpeed = frames * gravity * 0.75 #new max speed so it slows down at a constant since gravity is constant 
+		startSpeed = frames * gravity * 0.7 #new max speed so it slows down at a constant since gravity is constant 
 		curSpeed = startSpeed
 		
 		#print("path length = " + str(pathLength))
