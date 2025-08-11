@@ -25,7 +25,7 @@ func _ready() -> void:
 	
 	viewportSize = Vector2(get_viewport().size)
 	ySpawnPos = viewportSize.y # fish 0,0 is top left screen corner
-	jumpHeightMax = viewportSize.y - viewportSize.y * topScreenPadding
+	jumpHeightMax = viewportSize.y * topScreenPadding
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,19 +76,15 @@ func ChangeFishEnd(fish: Node2D, path: Path2D):
 	var xMaxDist
 	var yDist 
 	
-	if (fish.isLeftSpawn): #spawned left
+	if (fish.isLeftSpawn):
 		xMaxDist = viewportSize.x - fish.position.x
 		yDist = jumpHeightMax
 	
-	else: #spawned right
+	else:
 		xMaxDist = fish.position.x
 		yDist = jumpHeightMax * -1
 	
-	
 	fish.ChangePath(xMaxDist, yDist)
-	
-	
-	#fish.scale = Vector2(xMaxDist, yDist)
 
 func SetRandomDelay() -> void:
 	delay = randf_range(minTime, maxTime)

@@ -5,13 +5,13 @@
 [ext_resource type="Script" uid="uid://bpkn8fumnnasl" path="res://scripts/fish.gd" id="1_rie47"]
 
 [sub_resource type="Curve2D" id="Curve2D_rie47"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 900, -367.5, 0, 367.5, 0, 490, 180, 0, 0, 0, 0, 980, 900)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 900, -480, 0, 480, 0, 640, 180, 0, 0, 0, 0, 1280, 900)
 }
 point_count = 3
 
 [node name="Fish" type="Node2D"]
-position = Vector2(300, 0)
 script = ExtResource("1_rie47")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -20,7 +20,7 @@ curve = SubResource("Curve2D_rie47")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(0, 900)
-rotation = -0.97324
+rotation = -0.844154
 loop = false
 script = ExtResource("1_mmmkr")
 

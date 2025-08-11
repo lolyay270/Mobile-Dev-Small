@@ -12,11 +12,11 @@ func _ready() -> void:
 	#curSpeed = speed;
 	
 	
-	var path: Path2D = self.get_parent()
-	pathLength = path.curve.get_baked_length()
-	var half = pathLength / 2
-	var frames = half / gravity
-	var newSpeed = frames * 1.9
+	#var path: Path2D = self.get_parent()
+	#pathLength = path.curve.get_baked_length()
+	#var half = pathLength / 2
+	#var frames = half / gravity
+	#var newSpeed = frames * 1.9
 	
 	
 	
@@ -27,7 +27,7 @@ func _ready() -> void:
 	
 	curSpeed = speed
 	lowestSpeed = curSpeed
-	
+
 	
 
 func _process(delta: float) -> void:
@@ -48,6 +48,6 @@ func _process(delta: float) -> void:
 	# progress_ratio = 1 = complete
 	else:
 		#print("lowest speed = " + str(lowestSpeed))
-		self.queue_free()
+		$"../..".queue_free() #despawn the whole fish object
 	
 	progress += delta * curSpeed

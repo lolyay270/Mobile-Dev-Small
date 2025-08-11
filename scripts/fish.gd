@@ -5,17 +5,11 @@ extends Node2D
 
 func ChangePath(xDist: float, jumpHigh: float):
 	
-	# you CANNOT just edit the points of the original curve since that edits ALL fish in the scene
-	var newCurve: Curve2D = Curve2D.new()
+	# set the positions of the 3 points relative to how much space is left on the screen
+	curve.set_point_position(0, Vector2(0, position.y))
 	
-	newCurve.add_point(Vector2.ZERO) #current pos
-	newCurve.add_point(Vector2(xDist / 2, jumpHigh), Vector2(xDist * -0.75, 0), Vector2(xDist * 0.75, 0)) 
-	newCurve.add_point(Vector2(xDist, position.y))
+	curve.set_point_position(1, Vector2(xDist / 2, jumpHigh))
+	curve.set_point_in(1,  Vector2(xDist / 2 * -0.75, 0))
+	curve.set_point_out(1, Vector2(xDist / 2 * 0.75, 0))
 	
-	curve = newCurve;
-	
-	var printLine = ""
-	for i in range(0, curve.point_count):
-		printLine += str(curve.get_point_position(i)) + ", "
-		
-	print(printLine)
+	curve.set_point_position(2, Vector2(xDist, position.y))
