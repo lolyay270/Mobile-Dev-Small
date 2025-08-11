@@ -35,13 +35,14 @@ func _process(delta: float) -> void:
 		#spawn object
 		var fish = fish1.instantiate()
 		var path: Path2D = fish.get_child(0)
+		var pathFollow: PathFollow2D = path.get_child(0)
 		
 		add_child(fish)
 		
 		ChangeFishSpawn(fish)
 		ChangeFishEnd(fish, path)
 		
-		#fish.Start()
+		pathFollow.Start()
 		
 		# reset timer vars
 		lastSpawn = gameManager.runTime
@@ -82,7 +83,7 @@ func ChangeFishEnd(fish: Node2D, path: Path2D):
 	
 	else:
 		xMaxDist = fish.position.x
-		yDist = jumpHeightMax * -1
+		yDist = jumpHeightMax
 	
 	fish.ChangePath(xMaxDist, yDist)
 
