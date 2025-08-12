@@ -1,6 +1,14 @@
 extends Node2D
 
+enum ObjTypes {
+	Bomb,
+	Rasbora,
+	Gourami,
+	Tetra
+}
+
 @export var isLeftSpawn: bool = true
+@export var type: String
 @onready var curve: Curve2D = self.get_child(0).curve
 
 func ChangePath(xDist: float, jumpHigh: float):
