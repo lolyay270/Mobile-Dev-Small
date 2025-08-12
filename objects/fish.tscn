@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsw0xxj4d5f00"]
+[gd_scene load_steps=6 format=3 uid="uid://bsw0xxj4d5f00"]
 
 [ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="1_5c8yu"]
 [ext_resource type="Script" uid="uid://rhrsowvv8kj1" path="res://scripts/objectGravity.gd" id="1_mmmkr"]
 [ext_resource type="Script" uid="uid://bpkn8fumnnasl" path="res://scripts/objData.gd" id="1_rie47"]
+[ext_resource type="Script" uid="uid://mu6drrp7jy2a" path="res://scripts/ObjPath.gd" id="2_r0mne"]
 
 [sub_resource type="Curve2D" id="Curve2D_rie47"]
 resource_local_to_scene = true
@@ -15,8 +16,8 @@ point_count = 3
 script = ExtResource("1_rie47")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(0, -720)
 curve = SubResource("Curve2D_rie47")
+script = ExtResource("2_r0mne")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(0, 900)
