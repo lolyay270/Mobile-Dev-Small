@@ -2,7 +2,7 @@ extends PathFollow2D
 
 @export var move: bool = false
 @export var speed: int = 700
-@export var gravity: float = 2.1
+@export var gravity: float = 2
 
 var curSpeed
 
@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	if move:
 		if (curSpeed <= 0):
 			push_error("TOO MUCH GRAVITY ON FISH")
-			curSpeed = speed
+			curSpeed = 20 #give only a tiny amount of speed to keep them moving
 		
 		# reduce speed as gravity
 		if (progress_ratio < 0.5):
