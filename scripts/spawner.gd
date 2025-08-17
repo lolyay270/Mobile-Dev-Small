@@ -21,8 +21,7 @@ var ySpawnPos: float # spawn location of fish object
 var jumpHeightMax: float # how much of the screen height the fish is allowed to jump
 var minDistances: Vector2 # percent of screen that is minimum distances traveled
 
-const bombChance: float = 0.1 # chance of bomb spawning
-#const 
+const bombChance: float = 0.05 # chance of bomb spawning 
 
 var delay: float
 var lastSpawn: float = 0
@@ -38,6 +37,7 @@ func _ready() -> void:
 	minDistances = Vector2(0.4 * viewportSize.x, viewportSize.y - (0.4 * ySpawnPos)) #top of screen is 0, bottom is 720
 	
 	print(str(jumpHeightMax) + " " + str(minDistances.y))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -98,10 +98,20 @@ func ChangeFishEnd(fish: Node2D, path: Path2D):
 	
 	path.ChangePath(xDist, yDist)
 
+
 func RandomType(fish: Node2D):
+	var fishChance = (1 - bombChance) / 3
 	var rand = randf()
-	#if rand < 
-	#fish.type = rand
+	
+	if rand < bombChance:
+		fish.type = GameManager.ObjectTypes.Bomb
+	elif rand < bombChance + fishChance:
+		fish.type = GameManager.ObjectTypes.Rasbora
+	elif rand < bombChance + fishChance * 2:
+		fish.type = GameManager.ObjectTypes.Gourami
+	else:
+		fish.type = GameManager.ObjectTypes.Tetra
+
 
 func SetRandomDelay() -> void:
 	delay = randf_range(minTime, maxTime)
