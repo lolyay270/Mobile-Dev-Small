@@ -35,8 +35,6 @@ func _ready() -> void:
 	ySpawnPos = viewportSize.y + 200 # fish 0,0 is top left screen corner
 	jumpHeightMax = ySpawnPos * topScreenPadding
 	minDistances = Vector2(0.4 * viewportSize.x, viewportSize.y - (0.4 * ySpawnPos)) #top of screen is 0, bottom is 720
-	
-	print(str(jumpHeightMax) + " " + str(minDistances.y))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
