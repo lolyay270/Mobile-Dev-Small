@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://btxwjf1oh0f2p"]
+[gd_scene load_steps=7 format=3 uid="uid://btxwjf1oh0f2p"]
 
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_5khgj"]
 [ext_resource type="Script" uid="uid://ceo586xslgpb0" path="res://scripts/gameManager.gd" id="1_hinrk"]
 [ext_resource type="Script" uid="uid://chvvopsvkk6yx" path="res://scripts/flying objects/spawner.gd" id="2_31v75"]
 [ext_resource type="Script" uid="uid://d0wt1o6dh8yp4" path="res://scripts/playerTouch.gd" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://cqm8c6xroe5wf" path="res://scripts/net.gd" id="6_p57ef"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -41,3 +42,12 @@ script = ExtResource("4_iywne")
 position = Vector2(-64, -69)
 scale = Vector2(0.261724, 0.261724)
 texture = ExtResource("4_lbhrr")
+script = ExtResource("6_p57ef")
+
+[node name="Area2D" type="Area2D" parent="Player Touch/net"]
+position = Vector2(-179.578, -252.174)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player Touch/net/Area2D"]
+polygon = PackedVector2Array(-149.012, -30.5665, -22.9249, -106.983, 156.654, 38.2082, 15.2833, 160.474)
+
+[connection signal="area_entered" from="Player Touch/net/Area2D" to="Player Touch/net" method="_on_area_entered"]
