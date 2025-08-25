@@ -13,7 +13,6 @@ func NetObject(area: Area2D):
 #		reduce health
 		print("health - 1")
 	else:
-#		increase points
-		print("score + 1")
+		GameManager.UpdateScore(1)
 		
 	object.queue_free()
