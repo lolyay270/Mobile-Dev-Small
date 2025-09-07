@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var net = $net
+@onready var trigger: CollisionPolygon2D = $net/Area2D/CollisionPolygon2D
+
 var pressed: bool = false
 
 func _ready() -> void:
@@ -13,9 +15,13 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("press"):
 		self.global_position = event.position
-		net.show()
+		SetNetStatus(true)
 		pressed = true
 	
 	if event.is_action_released("press"):
-		net.hide()
+		SetNetStatus(false)
 		pressed = false
+
+func SetNetStatus(isActive: bool):
+	net.set_visible(isActive) #toggle vision
+	trigger.set_disabled(!isActive) #toggle collider
