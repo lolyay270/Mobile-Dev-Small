@@ -1,10 +1,11 @@
-extends Control
+extends Node
 
 var isPlaying: bool = true
-var score: int = 0
-
-@onready var scoreDisplay: Label = $"Score"
+@export var score: int = 0
 @export var runTime: float = 0
+
+#signal is equivalent to unity event
+signal scoreUpdated 
 
 enum ObjectTypes {
 	Bomb,
@@ -21,5 +22,4 @@ func _process(delta: float) -> void:
 
 func UpdateScore(change: int):
 	score += change
-	print("score: ", str(score), scoreDisplay.name)
-	#scoreDisplay.set_text( str(score) )
+	scoreUpdated.emit()

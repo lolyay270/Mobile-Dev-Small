@@ -7,8 +7,6 @@ What type, spawn location, and path each object has
 extends Node
 
 @onready var viewportSize = get_viewport().size
-
-@onready var gameManager = $".."
 @onready var fish1: PackedScene = preload("res://objects/fish.tscn")
 
 const minTime: float = .1
@@ -39,7 +37,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (lastSpawn + delay <= gameManager.runTime):
+	if (lastSpawn + delay <= GameManager.runTime):
 		
 		#spawn object
 		var fish = fish1.instantiate()
@@ -55,7 +53,7 @@ func _process(delta: float) -> void:
 		pathFollow.Start()
 		
 		# reset timer vars
-		lastSpawn = gameManager.runTime
+		lastSpawn = GameManager.runTime
 		SetRandomDelay()
 
 
