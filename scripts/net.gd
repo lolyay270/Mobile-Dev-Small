@@ -10,8 +10,6 @@ func NetObject(area: Area2D):
 	var objType: GameManager.ObjectTypes = object.type
 	
 	if objType == GameManager.ObjectTypes.Bomb:
-#		reduce health
-		print("health - 1")
 		GameManager.UpdateHealth(-1)
 	else:
 		GameManager.UpdateScore(1)
