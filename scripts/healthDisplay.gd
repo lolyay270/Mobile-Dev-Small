@@ -1,5 +1,7 @@
 extends Node
 
+@onready var healthManager = $".."
+
 var hearts: Array[Node]
 @onready var heartSprite: CompressedTexture2D = preload("res://icon.svg")
 
@@ -9,13 +11,10 @@ var edgeScreenPaddingPerc = 0.03 #percent of edge of screen not covered by heart
 var edgeScreenPaddingPx
 
 
-
-
 func _ready() -> void:
 	edgeScreenPaddingPx = max(viewportSize.x, viewportSize.y) * edgeScreenPaddingPerc
 	
-	GameManager.healthUpdated.connect(UpdateDisplay)
-	SpawnHearts(GameManager.maxHealth)
+	SpawnHearts(healthManager.maxHealth)
 
 
 func SpawnHearts(count: int):
@@ -32,7 +31,6 @@ func SpawnHearts(count: int):
 
 
 func UpdateDisplay():
-	print(GameManager.health)
-	for heart in hearts:
-		if hearts.find(heart) > GameManager.health:
-			heart.queue_free()
+	var lostHeart = hearts[healthManager.health]
+	lostHeart.queue_free()
+	hearts.erase(lostHeart)
