@@ -1,14 +1,12 @@
 extends Node
 
-var isPlaying: bool = true
-
+@export var isPlaying: bool = true
 @export var score: int = 0
-
 @export var runTime: float = 0
 
 #signal is equivalent to unity event
 signal scoreUpdated 
-signal healthUpdated
+signal playStateUpdated
 
 enum ObjectTypes {
 	Bomb,
@@ -20,10 +18,14 @@ enum ObjectTypes {
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if isPlaying:
-		runTime += delta
+	runTime += delta
 
 
 func UpdateScore(change: int):
 	score += change
 	scoreUpdated.emit()
+
+
+func UpdatePlayState(value: bool):
+	isPlaying = value
+	playStateUpdated.emit()
