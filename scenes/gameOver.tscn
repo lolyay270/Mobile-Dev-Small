@@ -1,0 +1,195 @@
+[gd_scene load_steps=4 format=3 uid="uid://c35ktvhfe7yf7"]
+
+[ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_dh54o"]
+[ext_resource type="LabelSettings" uid="uid://bvobu3r28jhvx" path="res://themes/sub heading label.tres" id="2_gob2e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dh54o"]
+font_size = 40
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.196078)
+
+[node name="game over" type="Label" parent="BG"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -260.0
+offset_right = 172.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = ExtResource("1_dh54o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="BG/game over"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(172, 41)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="score" type="Label" parent="BG"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -60.0
+offset_right = -102.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(196, 0)
+text = "SCORE: 99999"
+label_settings = ExtResource("2_gob2e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="BG/score"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(98, 21)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="high score" type="Label" parent="BG"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = -60.0
+offset_right = 390.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(196, 0)
+text = "HIGH SCORE: 99999"
+label_settings = ExtResource("2_gob2e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="BG/high score"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(98, 21)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="SELECTIONS" type="ColorRect" parent="BG"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 60.0
+offset_right = 250.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(250, 0)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="new game" type="Label" parent="BG/SELECTIONS"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -70.0
+offset_right = 140.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 0)
+text = "PLAY AGAIN"
+label_settings = ExtResource("2_gob2e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="BG/SELECTIONS/new game"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(140, 21)
+color = Color(0.466667, 0.490196, 0.905882, 1)
+
+[node name="new high score" type="Label" parent="BG"]
+z_index = 1
+layout_mode = 1
+offset_left = 7.0
+offset_top = 97.0
+offset_right = 347.0
+offset_bottom = 152.0
+rotation = -0.523599
+pivot_offset = Vector2(170, 0)
+text = "NEW HIGH SCORE"
+label_settings = SubResource("LabelSettings_dh54o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="BG/new high score"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 1.4)
+pivot_offset = Vector2(140, 21)
+color = Color(0.466667, 0.490196, 0.905882, 1)
