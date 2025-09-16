@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://btxwjf1oh0f2p"]
+[gd_scene load_steps=10 format=3 uid="uid://btxwjf1oh0f2p"]
 
+[ext_resource type="Script" uid="uid://b3gsvelmqx1yi" path="res://scripts/gameStart.gd" id="1_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_5khgj"]
 [ext_resource type="Script" uid="uid://chvvopsvkk6yx" path="res://scripts/flying objects/spawner.gd" id="2_31v75"]
 [ext_resource type="Script" uid="uid://baigijg1auo7a" path="res://scripts/scoreDisplay.gd" id="2_p57ef"]
@@ -18,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_0tnpc")
 
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource("2_31v75")

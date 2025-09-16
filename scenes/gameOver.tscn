@@ -180,3 +180,5 @@ grow_vertical = 2
 scale = Vector2(2, 1.4)
 pivot_offset = Vector2(140, 21)
 color = Color(0.466667, 0.490196, 0.905882, 1)
+
+[connection signal="button_up" from="BG/SELECTIONS/new game" to="." method="_on_new_game_button_up"]
