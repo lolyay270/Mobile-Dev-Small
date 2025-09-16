@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3gsvelmqx1yi" path="res://scripts/gameStart.gd" id="1_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_5khgj"]
 [ext_resource type="Script" uid="uid://chvvopsvkk6yx" path="res://scripts/flying objects/spawner.gd" id="2_31v75"]
-[ext_resource type="Script" uid="uid://baigijg1auo7a" path="res://scripts/scoreDisplay.gd" id="2_p57ef"]
+[ext_resource type="Script" uid="uid://baigijg1auo7a" path="res://scripts/scoreManager.gd" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://ol2o40kyrb2b" path="res://scripts/healthManager.gd" id="3_gee14"]
 [ext_resource type="Script" uid="uid://dc7f2jx5ckbb4" path="res://scripts/healthDisplay.gd" id="3_u5sy4"]
 [ext_resource type="Script" uid="uid://d0wt1o6dh8yp4" path="res://scripts/playerTouch.gd" id="4_iywne"]

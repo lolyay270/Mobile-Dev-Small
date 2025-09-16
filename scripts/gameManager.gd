@@ -1,11 +1,9 @@
 extends Node
 
 @export var isPlaying: bool = true
-@export var score: int = 0
 @export var runTime: float = 0 #used for fish spawning
 
 #signal is equivalent to unity event
-signal scoreUpdated 
 signal playStateUpdated
 
 enum ObjectTypes {
@@ -21,16 +19,11 @@ func _process(delta: float) -> void:
 	runTime += delta
 
 
-func UpdateScore(change: int):
-	score += change
-	scoreUpdated.emit()
-
-
 func UpdatePlayState(value: bool):
 	isPlaying = value
 	playStateUpdated.emit()
 
+
 func ResetToDefault():
 	UpdatePlayState(true)
-	UpdateScore(-score)
 	runTime = 0

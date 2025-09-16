@@ -1,9 +1,10 @@
 extends Node
 
-@onready var scoreDisplay: Label = $BG/score
+@onready var finalScoreDisplay: Label = $BG/score
+@onready var scoreManager = $"/root/Game/Score"
 
 func _ready() -> void:
-	scoreDisplay.text = "SCORE: " + str(GameManager.score)
+	finalScoreDisplay.text = "SCORE: " + str(scoreManager.score)
 
 
 func _on_new_game_button_up() -> void:

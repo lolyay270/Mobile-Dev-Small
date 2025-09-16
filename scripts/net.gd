@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @onready var healthManager = $"/root/Game/Health"
+@onready var scoreManager = $"/root/Game/Score"
 
 
 func _on_area_entered(area: Area2D) -> void:
@@ -14,6 +15,6 @@ func NetObject(area: Area2D):
 	if objType == GameManager.ObjectTypes.Bomb:
 		healthManager.UpdateHealth(-1)
 	else:
-		GameManager.UpdateScore(1)
+		scoreManager.UpdateScore(1)
 		
 	object.queue_free()
