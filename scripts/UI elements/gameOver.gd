@@ -4,6 +4,7 @@ extends Node
 @onready var scoreManager = $"/root/Game/Score/Value"
 
 func _ready() -> void:
+	scoreManager.get_parent().hide() #hide the scoreDisplay
 	finalScoreDisplay.text = "SCORE: " + str(scoreManager.score)
 
 
