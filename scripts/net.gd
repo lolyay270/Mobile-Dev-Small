@@ -6,7 +6,7 @@ extends Sprite2D
 
 #external scripts
 @onready var healthManager = $"/root/Game/Health"
-@onready var scoreManager = $"/root/Game/Score"
+@onready var scoreManager = $"/root/Game/Score/Value"
 
 # related to net
 @onready var trigger = $Area2D/CollisionPolygon2D

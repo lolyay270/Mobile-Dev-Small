@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://btxwjf1oh0f2p"]
+[gd_scene load_steps=12 format=3 uid="uid://btxwjf1oh0f2p"]
 
 [ext_resource type="Script" uid="uid://b3gsvelmqx1yi" path="res://scripts/gameStart.gd" id="1_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_5khgj"]
 [ext_resource type="Script" uid="uid://chvvopsvkk6yx" path="res://scripts/flying objects/spawner.gd" id="2_31v75"]
 [ext_resource type="Script" uid="uid://baigijg1auo7a" path="res://scripts/scoreManager.gd" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://ol2o40kyrb2b" path="res://scripts/healthManager.gd" id="3_gee14"]
-[ext_resource type="Script" uid="uid://dc7f2jx5ckbb4" path="res://scripts/healthDisplay.gd" id="3_u5sy4"]
+[ext_resource type="Script" uid="uid://dc7f2jx5ckbb4" path="res://scripts/UI elements/healthDisplay.gd" id="3_u5sy4"]
+[ext_resource type="LabelSettings" uid="uid://bvobu3r28jhvx" path="res://themes/sub heading label.tres" id="4_dinhu"]
 [ext_resource type="Script" uid="uid://d0wt1o6dh8yp4" path="res://scripts/playerTouch.gd" id="4_iywne"]
+[ext_resource type="Script" uid="uid://bqgwu72tyshgr" path="res://scripts/UI elements/scoreDisplay.gd" id="4_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://cqm8c6xroe5wf" path="res://scripts/net.gd" id="6_p57ef"]
 
@@ -25,19 +27,59 @@ script = ExtResource("1_0tnpc")
 script = ExtResource("2_31v75")
 
 [node name="Score" type="Label" parent="."]
-layout_mode = 2
-offset_left = 69.0
-offset_top = 33.0
-offset_right = 79.0
-offset_bottom = 56.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -247.0
+offset_bottom = 42.0
+grow_horizontal = 0
 size_flags_horizontal = 0
-text = "0"
+text = "SCORE:                  "
+label_settings = ExtResource("4_dinhu")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_kvpfn")
+
+[node name="Value" type="Label" parent="Score"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -167.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "0000000"
+label_settings = ExtResource("4_dinhu")
+horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("2_p57ef")
+
+[node name="bg" type="ColorRect" parent="Score"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(123.5, 21)
+color = Color(0.6175, 0.65075, 0.95, 1)
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_gee14")
 
-[node name="Display" type="Node" parent="Health"]
+[node name="Display" type="Control" parent="Health"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
 script = ExtResource("3_u5sy4")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
