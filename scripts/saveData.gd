@@ -15,11 +15,6 @@ var saveFileLocation: String = "user://savegame.save"
 func save_game():
 	var save_file = FileAccess.open(saveFileLocation, FileAccess.WRITE)
 	for node in save_nodes:
-		# Check the node is an instanced scene so it can be instanced again during load.
-		if node.scene_file_path.is_empty():
-			print("attempting to save ", node.name, ", but node is not an instanced scene, skipped")
-			continue
-		
 		# Check the node has a save function.
 		if !node.has_method("save"):
 			print("node ", node.name, " is missing a save() function, skipped")
