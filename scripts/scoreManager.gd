@@ -8,6 +8,7 @@ extends Label
 
 func _ready() -> void:
 	GameManager.playStateUpdated.connect(UpdateDisplay)
+	UpdateScore(0)
 
 
 func UpdateScore(change: int):
