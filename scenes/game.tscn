@@ -1,15 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://btxwjf1oh0f2p"]
+[gd_scene load_steps=15 format=3 uid="uid://btxwjf1oh0f2p"]
 
 [ext_resource type="Script" uid="uid://b3gsvelmqx1yi" path="res://scripts/gameStart.gd" id="1_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_5khgj"]
 [ext_resource type="Script" uid="uid://chvvopsvkk6yx" path="res://scripts/flying objects/spawner.gd" id="2_31v75"]
 [ext_resource type="Script" uid="uid://baigijg1auo7a" path="res://scripts/scoreManager.gd" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://ol2o40kyrb2b" path="res://scripts/healthManager.gd" id="3_gee14"]
+[ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="3_kvuet"]
 [ext_resource type="Script" uid="uid://dc7f2jx5ckbb4" path="res://scripts/UI elements/healthDisplay.gd" id="3_u5sy4"]
 [ext_resource type="LabelSettings" uid="uid://bvobu3r28jhvx" path="res://themes/sub heading label.tres" id="4_dinhu"]
 [ext_resource type="Script" uid="uid://d0wt1o6dh8yp4" path="res://scripts/playerTouch.gd" id="4_iywne"]
 [ext_resource type="Script" uid="uid://bqgwu72tyshgr" path="res://scripts/UI elements/scoreDisplay.gd" id="4_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="4_trtic"]
+[ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/mainMenuButton.gd" id="5_trtic"]
 [ext_resource type="Script" uid="uid://cqm8c6xroe5wf" path="res://scripts/net.gd" id="6_p57ef"]
 
 [node name="Game" type="Control"]
@@ -111,4 +114,17 @@ position = Vector2(-179.578, -252.174)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player Touch/net/Area2D"]
 polygon = PackedVector2Array(-149.012, -30.5665, -22.9249, -106.983, 156.654, 38.2082, 15.2833, 160.474)
 
+[node name="main menu" type="Button" parent="."]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 390.0
+offset_bottom = 390.0
+scale = Vector2(0.2, 0.2)
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_kvuet")
+icon = ExtResource("4_trtic")
+script = ExtResource("5_trtic")
+
 [connection signal="area_entered" from="Player Touch/net/Area2D" to="Player Touch/net" method="_on_area_entered"]
+[connection signal="button_up" from="main menu" to="main menu" method="_on_button_up"]
