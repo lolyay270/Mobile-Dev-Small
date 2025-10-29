@@ -5,7 +5,7 @@ This script manages high score checking, and displaying both scores in the gameO
 extends Node
 
 @onready var finalScoreDisplay: Label = $BG/score
-@onready var highscoreDisplay = $"BG/high score"
+@onready var highscoreDisplay: Label = $"BG/high score"
 @onready var newHSBanner = $"BG/new high score"
 @onready var bannerAnimate: AnimationPlayer = $"BG/new high score/AnimationPlayer"
 
@@ -19,12 +19,12 @@ func _ready() -> void:
 	
 	scoreManager.get_parent().hide() #hide the scoreDisplay
 	finalScoreDisplay.text = "SCORE: " + str(scoreManager.score)
-	highscoreDisplay.text = "HIGH SCORE: " + str(GameManager.highScore)
 
 
 func manageHighScore():
 	GameManager.highScore = scoreManager.score
 	SaveData.save_game()
 	
+	highscoreDisplay.UpdateScore(scoreManager.score)
 	newHSBanner.show()
 	bannerAnimate.play("sizePulse")
