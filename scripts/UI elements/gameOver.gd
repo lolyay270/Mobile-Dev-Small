@@ -22,10 +22,6 @@ func _ready() -> void:
 	highscoreDisplay.text = "HIGH SCORE: " + str(GameManager.highScore)
 
 
-func _on_new_game_button_up() -> void:
-	get_tree().reload_current_scene()
-
-
 func manageHighScore():
 	GameManager.highScore = scoreManager.score
 	SaveData.save_game()

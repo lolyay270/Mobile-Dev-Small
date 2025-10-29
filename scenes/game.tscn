@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://bqgwu72tyshgr" path="res://scripts/UI elements/scoreDisplay.gd" id="4_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="4_trtic"]
-[ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/mainMenuButton.gd" id="5_trtic"]
+[ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="5_trtic"]
 [ext_resource type="Script" uid="uid://cqm8c6xroe5wf" path="res://scripts/net.gd" id="6_p57ef"]
 
 [node name="Game" type="Control"]

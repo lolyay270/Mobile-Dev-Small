@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c35ktvhfe7yf7"]
+[gd_scene load_steps=10 format=3 uid="uid://c35ktvhfe7yf7"]
 
 [ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_dh54o"]
 [ext_resource type="Script" uid="uid://b5i0hbk7csm8i" path="res://scripts/UI elements/gameOver.gd" id="1_gob2e"]
 [ext_resource type="LabelSettings" uid="uid://bvobu3r28jhvx" path="res://themes/sub heading label.tres" id="2_gob2e"]
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="4_d1w46"]
+[ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="5_lwyln"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dh54o"]
 font_size = 40
@@ -191,6 +192,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_d1w46")
 text = "PLAY AGAIN"
+script = ExtResource("5_lwyln")
+sceneToLoad = "res://scenes/game.tscn"
 
 [node name="new high score" type="Label" parent="BG"]
 visible = false
@@ -224,4 +227,4 @@ libraries = {
 &"": SubResource("AnimationLibrary_lwyln")
 }
 
-[connection signal="button_up" from="BG/SELECTIONS/new game" to="." method="_on_new_game_button_up"]
+[connection signal="button_up" from="BG/SELECTIONS/new game" to="BG/SELECTIONS/new game" method="_on_button_up"]
