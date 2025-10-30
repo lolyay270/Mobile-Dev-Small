@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsw0xxj4d5f00"]
+[gd_scene load_steps=9 format=3 uid="uid://bsw0xxj4d5f00"]
 
 [ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="1_5c8yu"]
 [ext_resource type="Script" uid="uid://rhrsowvv8kj1" path="res://scripts/flying objects/objGravity.gd" id="1_mmmkr"]
 [ext_resource type="Script" uid="uid://bpkn8fumnnasl" path="res://scripts/flying objects/objData.gd" id="1_rie47"]
 [ext_resource type="Script" uid="uid://mu6drrp7jy2a" path="res://scripts/flying objects/objPath.gd" id="2_r0mne"]
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="5_m1q5n"]
+[ext_resource type="Script" uid="uid://px0uis7j7ey6" path="res://scripts/flying objects/splashEffect.gd" id="6_6nqot"]
 
 [sub_resource type="Curve2D" id="Curve2D_rie47"]
 resource_local_to_scene = true
@@ -40,8 +41,10 @@ position = Vector2(9.38397, 1.70233)
 shape = SubResource("RectangleShape2D_r0mne")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Path2D/PathFollow2D"]
+emitting = false
 amount = 3
 texture = ExtResource("5_m1q5n")
+one_shot = true
 explosiveness = 0.9
 lifetime_randomness = 0.3
 fract_delta = false
@@ -53,3 +56,4 @@ initial_velocity_min = 150.0
 initial_velocity_max = 250.0
 scale_amount_min = 0.3
 scale_amount_max = 0.5
+script = ExtResource("6_6nqot")
