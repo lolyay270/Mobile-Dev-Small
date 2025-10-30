@@ -66,7 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.196078)
 
-[node name="game over" type="Label" parent="BG"]
+[node name="game over" type="Label" parent="."]
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -85,7 +85,7 @@ label_settings = ExtResource("1_dh54o")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="bg" type="ColorRect" parent="BG/game over"]
+[node name="bg" type="ColorRect" parent="game over"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -97,7 +97,7 @@ scale = Vector2(1.2, 1.2)
 pivot_offset = Vector2(172, 41)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
-[node name="score" type="Label" parent="BG"]
+[node name="score" type="Label" parent="."]
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -117,7 +117,7 @@ label_settings = ExtResource("2_gob2e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="bg" type="ColorRect" parent="BG/score"]
+[node name="bg" type="ColorRect" parent="score"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -129,7 +129,7 @@ scale = Vector2(1.2, 1.2)
 pivot_offset = Vector2(98, 21)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
-[node name="high score" type="Label" parent="BG"]
+[node name="high score" type="Label" parent="."]
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -150,7 +150,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_lwyln")
 
-[node name="bg" type="ColorRect" parent="BG/high score"]
+[node name="bg" type="ColorRect" parent="high score"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -162,7 +162,7 @@ scale = Vector2(1.2, 1.2)
 pivot_offset = Vector2(140, 21)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
-[node name="SELECTIONS" type="ColorRect" parent="BG"]
+[node name="SELECTIONS" type="ColorRect" parent="."]
 z_index = 1
 layout_mode = 1
 anchors_preset = 8
@@ -179,7 +179,7 @@ grow_vertical = 2
 pivot_offset = Vector2(250, 0)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
-[node name="new game" type="Button" parent="BG/SELECTIONS"]
+[node name="new game" type="Button" parent="SELECTIONS"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -197,10 +197,9 @@ text = "PLAY AGAIN"
 script = ExtResource("5_lwyln")
 sceneToLoad = "res://scenes/game.tscn"
 
-[node name="new high score" type="Label" parent="BG"]
+[node name="new high score" type="Label" parent="."]
 visible = false
 z_index = 1
-layout_mode = 1
 offset_left = 7.0
 offset_top = 97.0
 offset_right = 347.0
@@ -212,7 +211,7 @@ label_settings = SubResource("LabelSettings_dh54o")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="bg" type="ColorRect" parent="BG/new high score"]
+[node name="bg" type="ColorRect" parent="new high score"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -224,9 +223,9 @@ scale = Vector2(2, 1.4)
 pivot_offset = Vector2(140, 21)
 color = Color(0.466667, 0.490196, 0.905882, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BG/new high score"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="new high score"]
 libraries = {
 &"": SubResource("AnimationLibrary_lwyln")
 }
 
-[connection signal="button_up" from="BG/SELECTIONS/new game" to="BG/SELECTIONS/new game" method="_on_button_up"]
+[connection signal="button_up" from="SELECTIONS/new game" to="SELECTIONS/new game" method="_on_button_up"]

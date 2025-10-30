@@ -114,7 +114,7 @@ position = Vector2(-179.578, -252.174)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player Touch/net/Area2D"]
 polygon = PackedVector2Array(-149.012, -30.5665, -22.9249, -106.983, 156.654, 38.2082, 15.2833, 160.474)
 
-[node name="main menu" type="Button" parent="."]
+[node name="main menu button" type="Button" parent="."]
 layout_mode = 1
 offset_left = 30.0
 offset_top = 30.0
@@ -127,4 +127,4 @@ icon = ExtResource("4_trtic")
 script = ExtResource("5_trtic")
 
 [connection signal="area_entered" from="Player Touch/net/Area2D" to="Player Touch/net" method="_on_area_entered"]
-[connection signal="button_up" from="main menu" to="main menu" method="_on_button_up"]
+[connection signal="button_up" from="main menu button" to="main menu button" method="_on_button_up"]

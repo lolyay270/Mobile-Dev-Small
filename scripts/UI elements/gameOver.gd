@@ -4,10 +4,10 @@ This script manages high score checking, and displaying both scores in the gameO
 
 extends Node
 
-@onready var finalScoreDisplay: Label = $BG/score
-@onready var highscoreDisplay: Label = $"BG/high score"
-@onready var newHSBanner = $"BG/new high score"
-@onready var bannerAnimate: AnimationPlayer = $"BG/new high score/AnimationPlayer"
+@onready var finalScoreDisplay: Label = $score
+@onready var highscoreDisplay: Label = $"high score"
+@onready var newHSBanner = $"new high score"
+@onready var bannerAnimate: AnimationPlayer = $"new high score/AnimationPlayer"
 
 @onready var scoreManager = $"/root/Game/Score/Value"
 
