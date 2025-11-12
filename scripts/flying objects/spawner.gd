@@ -7,7 +7,10 @@ What type, spawn location, and path each object has
 extends Node
 
 @onready var viewportSize = get_viewport().size
-@onready var fish1: PackedScene = preload("res://objects/fish.tscn")
+@onready var fishResourcesFolderFilePath: String = "res://objects/fish types/"
+@onready var rockResource: Resource = preload("res://objects/rock.tres")
+@onready var objectPrefab: PackedScene = preload("res://objects/pathingObject.tscn")
+var fishResources: Array[Resource] = []
 
 const minTime: float = .1
 const maxTime: float = 1
@@ -33,6 +36,11 @@ func _ready() -> void:
 	ySpawnPos = viewportSize.y + 200 # fish 0,0 is top left screen corner
 	jumpHeightMax = ySpawnPos * topScreenPadding
 	minDistances = Vector2(0.4 * viewportSize.x, viewportSize.y - (0.4 * ySpawnPos)) #top of screen is 0, bottom is 720
+	
+	for filePath: String in dir_contents(fishResourcesFolderFilePath):
+		var resource: Resource = load(filePath)
+		fishResources.append(resource)
+	print(fishResources.size())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,7 +48,7 @@ func _process(delta: float) -> void:
 	if (lastSpawn + delay <= GameManager.runTime):
 		
 		#spawn object
-		var fish = fish1.instantiate()
+		var fish = objectPrefab.instantiate()
 		var path: Path2D = fish.get_child(0)
 		var pathFollow: PathFollow2D = path.get_child(0)
 		
@@ -96,18 +104,35 @@ func ChangeFishEnd(fish: Node2D, path: Path2D):
 
 
 func RandomType(fish: Node2D):
-	var fishChance = (1 - bombChance) / 3
+	var fishChance = (1 - bombChance) / fishResources.size()
 	var rand = randf()
 	
 	if rand < bombChance:
-		fish.type = GameManager.ObjectTypes.Bomb
-	elif rand < bombChance + fishChance:
-		fish.type = GameManager.ObjectTypes.Rasbora
-	elif rand < bombChance + fishChance * 2:
-		fish.type = GameManager.ObjectTypes.Gourami
+		fish.type = GameManager.ObjectTypes.Rock
 	else:
-		fish.type = GameManager.ObjectTypes.Tetra
+		fish.type = GameManager.ObjectTypes.Fish
 
 
 func SetRandomDelay() -> void:
 	delay = randf_range(minTime, maxTime)
+
+
+# adjusted from the Godot docs 
+# https://docs.godotengine.org/en/stable/classes/class_diraccess.html 
+func dir_contents(path):
+	var dir = DirAccess.open(path)
+	var resourcePaths: Array[String] = [] 
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				print("Found directory: " + file_name)
+			else:
+				print("Found file: " + file_name)
+				resourcePaths.append(file_name)
+			file_name = dir.get_next()
+		return resourcePaths
+	else:
+		print("An error occurred when trying to access the path.")
+		return null

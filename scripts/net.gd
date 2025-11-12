@@ -20,7 +20,7 @@ func _on_area_entered(area: Area2D) -> void:
 		var object: Node2D = area.get_parent().get_parent().get_parent()  
 		var objType: GameManager.ObjectTypes = object.type
 		
-		if objType == GameManager.ObjectTypes.Bomb:
+		if objType == GameManager.ObjectTypes.Rock:
 			healthManager.UpdateHealth(-1)
 		else:
 			scoreManager.UpdateScore(1)

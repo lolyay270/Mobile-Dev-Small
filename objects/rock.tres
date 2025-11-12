@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ObjectStats" load_steps=2 format=3 uid="uid://dx0lchmvjyp6e"]
+
+[ext_resource type="Script" uid="uid://cdy545efpo2hw" path="res://scripts/objectStats.gd" id="1_q70v5"]
+
+[resource]
+script = ExtResource("1_q70v5")
+name = ""
+type = 0
+scoreIncrease = 1
+startSpawnMinutes = 0.0
+infiniteSpawns = true
+numberOfSpawns = 0
+metadata/_custom_type_script = "uid://cdy545efpo2hw"

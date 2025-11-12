@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bsw0xxj4d5f00"]
 
-[ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="1_5c8yu"]
-[ext_resource type="Script" uid="uid://rhrsowvv8kj1" path="res://scripts/flying objects/objGravity.gd" id="1_mmmkr"]
-[ext_resource type="Script" uid="uid://bpkn8fumnnasl" path="res://scripts/flying objects/objData.gd" id="1_rie47"]
-[ext_resource type="Script" uid="uid://mu6drrp7jy2a" path="res://scripts/flying objects/objPath.gd" id="2_r0mne"]
-[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="5_m1q5n"]
-[ext_resource type="Script" uid="uid://px0uis7j7ey6" path="res://scripts/flying objects/splashEffect.gd" id="6_6nqot"]
+[ext_resource type="Script" uid="uid://bpkn8fumnnasl" path="res://scripts/flying objects/objData.gd" id="1_8v7ii"]
+[ext_resource type="Script" uid="uid://mu6drrp7jy2a" path="res://scripts/flying objects/objPath.gd" id="2_kvao4"]
+[ext_resource type="Script" uid="uid://rhrsowvv8kj1" path="res://scripts/flying objects/objGravity.gd" id="3_pqlyx"]
+[ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="4_trd0b"]
+[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="5_xhjs6"]
+[ext_resource type="Script" uid="uid://px0uis7j7ey6" path="res://scripts/flying objects/splashEffect.gd" id="6_rjxui"]
 
 [sub_resource type="Curve2D" id="Curve2D_rie47"]
 resource_local_to_scene = true
@@ -18,21 +18,23 @@ point_count = 3
 size = Vector2(165.261, 68.8446)
 
 [node name="Fish" type="Node2D"]
-script = ExtResource("1_rie47")
+script = ExtResource("1_8v7ii")
+
+[node name="Node" type="Node" parent="."]
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_rie47")
-script = ExtResource("2_r0mne")
+script = ExtResource("2_kvao4")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(0, 900)
 rotation = -0.844154
 loop = false
-script = ExtResource("1_mmmkr")
+script = ExtResource("3_pqlyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("1_5c8yu")
+texture = ExtResource("4_trd0b")
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
 
@@ -43,7 +45,7 @@ shape = SubResource("RectangleShape2D_r0mne")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Path2D/PathFollow2D"]
 emitting = false
 amount = 3
-texture = ExtResource("5_m1q5n")
+texture = ExtResource("5_xhjs6")
 one_shot = true
 explosiveness = 0.9
 lifetime_randomness = 0.3
@@ -56,4 +58,4 @@ initial_velocity_min = 150.0
 initial_velocity_max = 250.0
 scale_amount_min = 0.3
 scale_amount_max = 0.5
-script = ExtResource("6_6nqot")
+script = ExtResource("6_rjxui")

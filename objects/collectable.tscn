@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b05jsafbt3667"]
+
+[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_46kdt"]
+
+[node name="Collectable" type="VSplitContainer"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 127.0
+offset_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dragging_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_46kdt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+text = "[fish name here]"
+horizontal_alignment = 1
+vertical_alignment = 1

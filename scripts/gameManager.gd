@@ -8,10 +8,8 @@ extends Node
 signal playStateUpdated
 
 enum ObjectTypes {
-	Bomb,
-	Rasbora,
-	Gourami,
-	Tetra
+	Fish,
+	Rock
 }
 
 
