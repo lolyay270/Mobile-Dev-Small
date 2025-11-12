@@ -1,0 +1,207 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt8lqqkoet3n"]
+
+[ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_akiqc"]
+[ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="1_m8hiy"]
+[ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="2_akiqc"]
+[ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="3_tdt8g"]
+[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="5_2ukpw"]
+[ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="5_tdt8g"]
+[ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="7_yhtot"]
+
+[node name="Collection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.196078)
+
+[node name="title" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -310.0
+offset_right = 275.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOUR COLLECTION"
+label_settings = ExtResource("1_akiqc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="title"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(275, 41.5)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="main menu button" type="Button" parent="."]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 390.0
+offset_bottom = 390.0
+scale = Vector2(0.2, 0.2)
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_m8hiy")
+icon = ExtResource("2_akiqc")
+script = ExtResource("3_tdt8g")
+
+[node name="bg" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -145.0
+offset_right = 400.0
+offset_bottom = 255.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(250, 0)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="GridContainer" type="GridContainer" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -190.0
+offset_right = 390.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="SplitContainer" type="SplitContainer" parent="bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dragging_enabled = false
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="bg/GridContainer/SplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_2ukpw")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="bg/GridContainer/SplitContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "[fish name here]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SplitContainer2" type="SplitContainer" parent="bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="bg/GridContainer/SplitContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_tdt8g")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="bg/GridContainer/SplitContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "[fish name here]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SplitContainer3" type="SplitContainer" parent="bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="bg/GridContainer/SplitContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_akiqc")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="bg/GridContainer/SplitContainer3"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "[fish name here]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SplitContainer5" type="SplitContainer" parent="bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="bg/GridContainer/SplitContainer5"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_tdt8g")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="bg/GridContainer/SplitContainer5"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "[fish name here]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SplitContainer4" type="SplitContainer" parent="bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="bg/GridContainer/SplitContainer4"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_yhtot")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="bg/GridContainer/SplitContainer4"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "[fish name here]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_up" from="main menu button" to="main menu button" method="_on_button_up"]
