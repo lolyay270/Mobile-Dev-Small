@@ -26,4 +26,4 @@ text = "[fish name here]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="data" type="Node" parent="."]
+[node name="stats" type="Node" parent="."]

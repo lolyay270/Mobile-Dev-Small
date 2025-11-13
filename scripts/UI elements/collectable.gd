@@ -1,8 +1,11 @@
 extends VSplitContainer
 
 @onready var sprite: TextureRect = $TextureRect
-@onready var name: Label = $Label
-@onready var data: $data
+@onready var fishName: Label = $Label
+@onready var stats: ObjectStats =  $stats.get_script()
 
-func _ready() -> void:
+func setStats(res: Resource):
+	stats = res
 	
+	#change sprite to match stats
+	sprite.texture = stats.sprite

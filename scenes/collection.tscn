@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt8lqqkoet3n"]
+[gd_scene load_steps=7 format=3 uid="uid://dt8lqqkoet3n"]
 
 [ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_akiqc"]
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="1_m8hiy"]
 [ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="2_akiqc"]
 [ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="3_tdt8g"]
+[ext_resource type="Script" uid="uid://70868cgiqwh" path="res://scripts/UI elements/collection.gd" id="5_5vqia"]
 [ext_resource type="PackedScene" uid="uid://b05jsafbt3667" path="res://objects/collectable.tscn" id="5_tdt8g"]
 
 [node name="Collection" type="Control"]
@@ -101,6 +102,7 @@ offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
+script = ExtResource("5_5vqia")
 
 [node name="Collectable" parent="bg/GridContainer" instance=ExtResource("5_tdt8g")]
 layout_mode = 2
