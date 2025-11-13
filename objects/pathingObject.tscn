@@ -20,8 +20,6 @@ size = Vector2(165.261, 68.8446)
 [node name="Fish" type="Node2D"]
 script = ExtResource("1_8v7ii")
 
-[node name="Node" type="Node" parent="."]
-
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_rie47")
 script = ExtResource("2_kvao4")
@@ -59,3 +57,5 @@ initial_velocity_max = 250.0
 scale_amount_min = 0.3
 scale_amount_max = 0.5
 script = ExtResource("6_rjxui")
+
+[node name="Stats" type="Node" parent="."]

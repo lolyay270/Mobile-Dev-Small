@@ -7,9 +7,11 @@
 [resource]
 script = ExtResource("1_5cl8f")
 name = "Rasbora"
-type = 1
+type = 0
 sprite = ExtResource("3_t5r23")
 silhouette = ExtResource("2_b2d6c")
 scoreIncrease = 1
 startSpawnMinutes = 0.0
-numberOfSpawns = inf
+infiniteSpawns = true
+numberOfSpawns = 0
+isLeftSpawn = true

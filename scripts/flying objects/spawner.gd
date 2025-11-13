@@ -38,9 +38,8 @@ func _ready() -> void:
 	minDistances = Vector2(0.4 * viewportSize.x, viewportSize.y - (0.4 * ySpawnPos)) #top of screen is 0, bottom is 720
 	
 	for filePath: String in dir_contents(fishResourcesFolderFilePath):
-		var resource: Resource = load(filePath)
+		var resource: Resource = load(fishResourcesFolderFilePath + filePath)
 		fishResources.append(resource)
-	print(fishResources.size())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,9 +53,9 @@ func _process(delta: float) -> void:
 		
 		self.add_child(fish)
 		
+		RandomType(fish)
 		ChangeFishSpawn(fish)
 		ChangeFishEnd(fish, path)
-		RandomType(fish)
 		
 		pathFollow.Start()
 		
@@ -76,10 +75,10 @@ func ChangeFishSpawn(fish: Node2D):
 	if (side < sideRatio): #spawn left
 		xMin = 0 
 		xMax = viewportSize.x / 2 + viewportSize.x * spawnZoneCenterOverlap
-		fish.isLeftSpawn = true
+		fish.stats.isLeftSpawn = true
 	
 	else: #spawn right
-		fish.isLeftSpawn = false
+		fish.stats.isLeftSpawn = false
 		fish.scale.x *= -1 # flip whole fish object to jump to the left
 		xMin = viewportSize.x / 2 - viewportSize.x * spawnZoneCenterOverlap 
 		xMax = viewportSize.x 
@@ -91,7 +90,7 @@ func ChangeFishSpawn(fish: Node2D):
 func ChangeFishEnd(fish: Node2D, path: Path2D):
 	var xMaxDist
 	
-	if (fish.isLeftSpawn):
+	if (fish.stats.isLeftSpawn):
 		xMaxDist = viewportSize.x - fish.position.x
 	else:
 		xMaxDist = fish.position.x
@@ -104,13 +103,16 @@ func ChangeFishEnd(fish: Node2D, path: Path2D):
 
 
 func RandomType(fish: Node2D):
-	var fishChance = (1 - bombChance) / fishResources.size()
 	var rand = randf()
+	var newType: Resource
 	
 	if rand < bombChance:
-		fish.type = GameManager.ObjectTypes.Rock
+		newType = rockResource
 	else:
-		fish.type = GameManager.ObjectTypes.Fish
+		rand = randi_range(1, fishResources.size())
+		newType = fishResources[rand - 1]
+	fish.setStats(newType)
+	print("set object to ", newType.resource_path, " type")
 
 
 func SetRandomDelay() -> void:

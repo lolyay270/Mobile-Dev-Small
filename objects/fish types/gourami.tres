@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="ObjectStats" load_steps=2 format=3 uid="uid://dt6uidwi5lyuy"]
+[gd_resource type="Resource" script_class="ObjectStats" load_steps=3 format=3 uid="uid://dt6uidwi5lyuy"]
 
 [ext_resource type="Script" uid="uid://cdy545efpo2hw" path="res://scripts/objectStats.gd" id="1_65wwu"]
+[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="2_odq1q"]
 
 [resource]
 script = ExtResource("1_65wwu")
-name = ""
-type = 1
+name = "Gourami"
+type = 0
+sprite = ExtResource("2_odq1q")
+silhouette = ExtResource("2_odq1q")
 scoreIncrease = 1
 startSpawnMinutes = 0.0
 infiniteSpawns = true
 numberOfSpawns = 0
+isLeftSpawn = true
 metadata/_custom_type_script = "uid://cdy545efpo2hw"

@@ -17,13 +17,12 @@ func _on_area_entered(area: Area2D) -> void:
 	#only check and destroy obj if net moving upwards
 	if touch.canCatch: 
 		#get pathFollow, then path, then object's parent node
-		var object: Node2D = area.get_parent().get_parent().get_parent()  
-		var objType: GameManager.ObjectTypes = object.type
+		var object: Node2D = area.get_parent().get_parent().get_parent()
 		
-		if objType == GameManager.ObjectTypes.Rock:
+		if object.stats.type == GameManager.ObjectTypes.Rock:
 			healthManager.UpdateHealth(-1)
 		else:
-			scoreManager.UpdateScore(1)
+			scoreManager.UpdateScore(object.stats.scoreIncrease)
 		
 		object.queue_free()
 
