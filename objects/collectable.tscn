@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b05jsafbt3667"]
+[gd_scene load_steps=3 format=3 uid="uid://b05jsafbt3667"]
 
+[ext_resource type="Script" uid="uid://djpt64f12xccq" path="res://scripts/UI elements/collectable.gd" id="1_5dljs"]
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_46kdt"]
 
 [node name="Collectable" type="VSplitContainer"]
@@ -9,6 +10,7 @@ offset_bottom = 35.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 dragging_enabled = false
+script = ExtResource("1_5dljs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
@@ -23,3 +25,5 @@ size_flags_vertical = 8
 text = "[fish name here]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="data" type="Node" parent="."]

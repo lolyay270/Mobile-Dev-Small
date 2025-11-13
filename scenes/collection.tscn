@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt8lqqkoet3n"]
+[gd_scene load_steps=6 format=3 uid="uid://dt8lqqkoet3n"]
 
 [ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_akiqc"]
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="1_m8hiy"]
 [ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="2_akiqc"]
 [ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="3_tdt8g"]
 [ext_resource type="PackedScene" uid="uid://b05jsafbt3667" path="res://objects/collectable.tscn" id="5_tdt8g"]
-[ext_resource type="Script" uid="uid://cdy545efpo2hw" path="res://scripts/objectStats.gd" id="6_5vqia"]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -60,6 +59,7 @@ pivot_offset = Vector2(275, 41.5)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
 [node name="main menu button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 30.0
 offset_top = 30.0
 offset_right = 390.0
@@ -104,7 +104,6 @@ columns = 3
 
 [node name="Collectable" parent="bg/GridContainer" instance=ExtResource("5_tdt8g")]
 layout_mode = 2
-script = ExtResource("6_5vqia")
 
 [node name="Collectable2" parent="bg/GridContainer" instance=ExtResource("5_tdt8g")]
 layout_mode = 2

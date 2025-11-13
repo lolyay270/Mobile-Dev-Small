@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ObjectStats" load_steps=3 format=3 uid="uid://dd4cktboa38is"]
+
+[ext_resource type="Script" uid="uid://cdy545efpo2hw" path="res://scripts/objectStats.gd" id="1_0bris"]
+[ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="2_pb024"]
+
+[resource]
+script = ExtResource("1_0bris")
+name = "Tetra"
+type = 0
+sprite = ExtResource("2_pb024")
+silhouette = ExtResource("2_pb024")
+scoreIncrease = 1
+startSpawnMinutes = 0.0
+infiniteSpawns = true
+numberOfSpawns = 0
+isLeftSpawn = true
+metadata/_custom_type_script = "uid://cdy545efpo2hw"
