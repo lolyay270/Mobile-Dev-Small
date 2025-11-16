@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ObjectStats" load_steps=3 format=3 uid="uid://dx0lchmvjyp6e"]
 
-[ext_resource type="Script" uid="uid://cdy545efpo2hw" path="res://scripts/objectStats.gd" id="1_q70v5"]
+[ext_resource type="Script" path="res://scripts/objectStats.gd" id="1_q70v5"]
 [ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="2_suc65"]
 
 [resource]

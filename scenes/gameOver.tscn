@@ -200,6 +200,7 @@ sceneToLoad = "res://scenes/game.tscn"
 [node name="new high score" type="Label" parent="."]
 visible = false
 z_index = 1
+layout_mode = 0
 offset_left = 7.0
 offset_top = 97.0
 offset_right = 347.0

@@ -7,10 +7,7 @@ What type, spawn location, and path each object has
 extends Node
 
 @onready var viewportSize = get_viewport().size
-@onready var fishResourcesFolderFilePath: String = "res://objects/fish types/"
-@onready var rockResource: Resource = preload("res://objects/rock.tres")
 @onready var objectPrefab: PackedScene = preload("res://objects/pathingObject.tscn")
-var fishResources: Array[Resource] = []
 
 const minTime: float = .1
 const maxTime: float = 1
@@ -36,10 +33,6 @@ func _ready() -> void:
 	ySpawnPos = viewportSize.y + 200 # fish 0,0 is top left screen corner
 	jumpHeightMax = ySpawnPos * topScreenPadding
 	minDistances = Vector2(0.4 * viewportSize.x, viewportSize.y - (0.4 * ySpawnPos)) #top of screen is 0, bottom is 720
-	
-	for filePath: String in dir_contents(fishResourcesFolderFilePath):
-		var resource: Resource = load(fishResourcesFolderFilePath + filePath)
-		fishResources.append(resource)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -107,34 +100,13 @@ func RandomType(fish: Node2D):
 	var newType: Resource
 	
 	if rand < bombChance:
-		newType = rockResource
+		newType = GameManager.rockResource
 	else:
-		rand = randi_range(1, fishResources.size())
-		newType = fishResources[rand - 1]
+		rand = randi_range(1, GameManager.fishResources.size())
+		newType = GameManager.fishResources[rand - 1]
 	fish.setStats(newType)
 	print("set object to ", newType.resource_path, " type")
 
 
 func SetRandomDelay() -> void:
 	delay = randf_range(minTime, maxTime)
-
-
-# adjusted from the Godot docs 
-# https://docs.godotengine.org/en/stable/classes/class_diraccess.html 
-func dir_contents(path):
-	var dir = DirAccess.open(path)
-	var resourcePaths: Array[String] = [] 
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				print("Found file: " + file_name)
-				resourcePaths.append(file_name)
-			file_name = dir.get_next()
-		return resourcePaths
-	else:
-		print("An error occurred when trying to access the path.")
-		return null

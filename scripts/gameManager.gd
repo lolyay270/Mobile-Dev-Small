@@ -16,7 +16,7 @@ enum ObjectTypes {
 }
 
 
-# Load save data each time the game is run
+# Get game ready each time the app is loaded
 func _ready() -> void:
 	SaveData.load_game()
 	
