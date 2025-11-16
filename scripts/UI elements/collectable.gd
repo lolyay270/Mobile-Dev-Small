@@ -7,6 +7,10 @@ extends VSplitContainer
 func setStats(res: Resource):
 	stats = res
 	
-	#change sprite to match stats
-	sprite.texture = stats.sprite
-	fishName.text = stats.name
+	# only if discovered, show full info
+	if GameManager.discovered.get(stats.name) == true:
+		sprite.texture = stats.sprite
+		fishName.text = stats.name
+	else:
+		sprite.texture = stats.silhouette
+		fishName.text = "???"
