@@ -61,7 +61,7 @@ func load_game():
 		if node_data["highscore"]:
 			GameManager.highScore = node_data["highscore"]
 		
-		if node_data["discovered"]:
+		elif node_data["discovered"]:
 			GameManager.discovered = node_data["discovered"]
 		
 		else:
