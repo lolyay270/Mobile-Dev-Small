@@ -23,16 +23,10 @@ func _ready() -> void:
 	SaveData.load_game()
 	preloadRequiredAssets()
 	
+	# create and save discoveries if not exist
 	if discovered.is_empty():
 		setupObjDiscoveries()
-		print("creating new dict:")
-		
-	else:
-		print("printing saved data:")
-	print(discovered.keys())
-	print(discovered.values())
-	
-	SaveData.save_game()
+		SaveData.save_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
