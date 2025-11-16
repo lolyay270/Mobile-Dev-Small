@@ -55,10 +55,14 @@ func load_game():
 		
 		# Get the data from the JSON object.
 		var node_data = json.data
+		print("save data:   ", node_data)
 		
 		# Save data to the correct nodes
 		if node_data["highscore"]:
 			GameManager.highScore = node_data["highscore"]
+		
+		if node_data["discovered"]:
+			GameManager.discovered = node_data["discovered"]
 		
 		else:
 			print(node_data)

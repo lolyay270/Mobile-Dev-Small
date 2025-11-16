@@ -105,7 +105,6 @@ func RandomType(fish: Node2D):
 		rand = randi_range(1, GameManager.fishResources.size())
 		newType = GameManager.fishResources[rand - 1]
 	fish.setStats(newType)
-	print("set object to ", newType.resource_path, " type")
 
 
 func SetRandomDelay() -> void:

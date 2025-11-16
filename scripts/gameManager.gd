@@ -7,6 +7,8 @@ extends Node
 @export var fishResources: Array[Resource] = []
 @export var rockResource: Resource
 
+@export var discovered: Dictionary = {}
+
 #signal is equivalent to unity event
 signal playStateUpdated
 
@@ -19,8 +21,18 @@ enum ObjectTypes {
 # Get game ready each time the app is loaded
 func _ready() -> void:
 	SaveData.load_game()
-	
 	preloadRequiredAssets()
+	
+	if discovered.is_empty():
+		setupObjDiscoveries()
+		print("creating new dict:")
+		
+	else:
+		print("printing saved data:")
+	print(discovered.keys())
+	print(discovered.values())
+	
+	SaveData.save_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,7 +53,8 @@ func ResetToDefault():
 # func for SaveData to call when saving to file
 func save():
 	return {
-		"highscore": highScore
+		"highscore": highScore,
+		"discovered": discovered
 	}
 
 
@@ -51,3 +64,9 @@ func preloadRequiredAssets():
 	fishResources.append( preload("res://objects/fish types/tetra.tres"))
 	
 	rockResource = preload("res://objects/rock.tres")
+
+func setupObjDiscoveries():
+	for obj in fishResources:
+		discovered[obj.name] = false
+	
+	discovered["Rock"] = false
