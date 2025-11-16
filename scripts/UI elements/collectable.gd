@@ -9,3 +9,4 @@ func setStats(res: Resource):
 	
 	#change sprite to match stats
 	sprite.texture = stats.sprite
+	fishName.text = stats.name
