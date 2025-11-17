@@ -64,3 +64,18 @@ func setupObjDiscoveries():
 		discovered[obj.name] = 0
 	
 	discovered["Rock"] = 0
+
+func humanReadableRunTime() -> String:
+	var time: int = floori(runTime)
+	var hrs = floori(time / 3600) # 3600 sec in hour
+	var mins = (time % 3600) / 60
+	var sec = time % 60
+	
+	var textToDisplay = "TIME: "
+	if hrs > 0:
+		textToDisplay += str(hrs) + "h "
+	if mins > 0:
+		textToDisplay += str(mins) + "m "
+	textToDisplay += str(sec) + "s"
+	
+	return textToDisplay

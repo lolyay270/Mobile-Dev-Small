@@ -8,6 +8,7 @@ extends Node
 @onready var highscoreDisplay: Label = $"high score"
 @onready var newHSBanner = $"new high score"
 @onready var bannerAnimate: AnimationPlayer = $"new high score/AnimationPlayer"
+@onready var timeDisplay: Label = $time
 
 @onready var scoreManager = $"/root/Game/Score/Value"
 
@@ -19,6 +20,8 @@ func _ready() -> void:
 	
 	scoreManager.get_parent().hide() #hide the scoreDisplay
 	finalScoreDisplay.text = "SCORE: " + str(scoreManager.score)
+	
+	timeDisplay.text = GameManager.humanReadableRunTime()
 
 
 func manageHighScore():

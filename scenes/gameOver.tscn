@@ -97,6 +97,35 @@ scale = Vector2(1.2, 1.2)
 pivot_offset = Vector2(172, 41)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
+[node name="time" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 25.0
+offset_right = -47.0
+offset_bottom = 67.0
+grow_horizontal = 0
+pivot_offset = Vector2(196, 0)
+text = "TIME: 24H 60M 60S"
+label_settings = ExtResource("2_gob2e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="time"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(136.5, 21)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
 [node name="score" type="Label" parent="."]
 z_index = 2
 layout_mode = 1
