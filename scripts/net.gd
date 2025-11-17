@@ -25,10 +25,10 @@ func _on_area_entered(area: Area2D) -> void:
 			scoreManager.UpdateScore(object.stats.scoreIncrease)
 		
 		# save that the obj has been collected
-		if GameManager.discovered.get(object.stats.name) == false:
-			GameManager.discovered.set(object.stats.name, true)
-			
-			SaveData.save_game()
+		var currCount: int = GameManager.discovered.get(object.stats.name)
+		GameManager.discovered.set(object.stats.name, currCount + 1)
+		
+		SaveData.save_game()
 		
 		object.queue_free()
 

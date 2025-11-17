@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b05jsafbt3667"]
+[gd_scene load_steps=5 format=3 uid="uid://b05jsafbt3667"]
 
 [ext_resource type="Script" uid="uid://djpt64f12xccq" path="res://scripts/UI elements/collectable.gd" id="1_5dljs"]
 [ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_46kdt"]
+[ext_resource type="Theme" uid="uid://b054jbhmyfyjs" path="res://themes/collectableText.tres" id="3_bdmrf"]
 
-[node name="Collectable" type="VSplitContainer"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dljs"]
+
+[node name="Collectable" type="PanelContainer"]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 127.0
-offset_bottom = 35.0
+offset_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-dragging_enabled = false
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5dljs")
 script = ExtResource("1_5dljs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -19,11 +22,19 @@ texture = ExtResource("1_46kdt")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="."]
+[node name="name" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
+theme = ExtResource("3_bdmrf")
 text = "[fish name here]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="collected" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_bdmrf")
+text = "99999"
+horizontal_alignment = 2
 
 [node name="stats" type="Node" parent="."]

@@ -61,6 +61,6 @@ func preloadRequiredAssets():
 
 func setupObjDiscoveries():
 	for obj in fishResources:
-		discovered[obj.name] = false
+		discovered[obj.name] = 0
 	
-	discovered["Rock"] = false
+	discovered["Rock"] = 0
