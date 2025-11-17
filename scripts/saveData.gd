@@ -65,3 +65,8 @@ func load_game():
 		
 		else:
 			print(node_data)
+
+# my own created script
+func clearSaveData():
+	GameManager.highScore = 0
+	GameManager.discovered.clear()
