@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c35ktvhfe7yf7"]
+[gd_scene load_steps=12 format=3 uid="uid://c35ktvhfe7yf7"]
 
 [ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_dh54o"]
 [ext_resource type="Script" uid="uid://b5i0hbk7csm8i" path="res://scripts/UI elements/gameOver.gd" id="1_gob2e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="4_d1w46"]
 [ext_resource type="Script" uid="uid://da7hhtf23u7u8" path="res://scripts/UI elements/highScoreDisplay.gd" id="4_lwyln"]
 [ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="5_lwyln"]
+[ext_resource type="Script" uid="uid://bka1onxld78jv" path="res://scripts/UI elements/newCollectables.gd" id="7_voy3d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dh54o"]
 font_size = 40
@@ -57,7 +58,6 @@ grow_vertical = 2
 script = ExtResource("1_gob2e")
 
 [node name="BG" type="ColorRect" parent="."]
-z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -245,7 +245,6 @@ script = ExtResource("5_lwyln")
 sceneToLoad = "res://scenes/collection.tscn"
 
 [node name="new high score" type="Label" parent="."]
-visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 7.0
@@ -275,6 +274,53 @@ color = Color(0.466667, 0.490196, 0.905882, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_lwyln")
 }
+
+[node name="newCollect" type="Label" parent="."]
+z_index = 2
+layout_mode = 2
+offset_left = 960.0
+offset_top = 420.0
+offset_right = 1285.0
+offset_bottom = 462.0
+grow_horizontal = 0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "NEW COLLECTABLES"
+label_settings = ExtResource("2_gob2e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="newCollect"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(162.5, 21)
+color = Color(0.466667, 0.490196, 0.905882, 1)
+
+[node name="newCollectables" type="GridContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -260.0
+offset_right = 5.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+columns = 2
+script = ExtResource("7_voy3d")
 
 [connection signal="button_up" from="SELECTIONS/new game" to="SELECTIONS/new game" method="_on_button_up"]
 [connection signal="button_up" from="SELECTIONS/collection" to="SELECTIONS/collection" method="_on_button_up"]

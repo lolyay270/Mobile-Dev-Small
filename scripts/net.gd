@@ -5,6 +5,7 @@ This script manages the trigger area and visuals of the net object
 extends Sprite2D
 
 #external scripts
+@onready var gameStart: Node = $"/root/Game"
 @onready var healthManager = $"/root/Game/Health"
 @onready var scoreManager = $"/root/Game/Score/Value"
 
@@ -26,6 +27,8 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		# save that the obj has been collected
 		var currCount: int = GameManager.discovered.get(object.stats.name)
+		if currCount == 0:
+			gameStart.newCollected.append(object.stats)
 		GameManager.discovered.set(object.stats.name, currCount + 1)
 		
 		SaveData.save_game()

@@ -16,6 +16,8 @@ var edgeScreenPaddingPerc: float = 0.03 #percent of edge of screen not covered U
 var betweenUIPaddingPerc: float = 0.01
 @export var betweenUIPaddingPx: float = 0
 
+@export var newCollected: Array[Resource] = []
+
 
 func _ready() -> void:
 	largestAxis = max(viewportSize.x, viewportSize.y)
