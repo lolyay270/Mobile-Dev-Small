@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://co4cgnpy7pgut"]
+[gd_scene load_steps=15 format=3 uid="uid://co4cgnpy7pgut"]
 
 [ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_cq4me"]
+[ext_resource type="Script" uid="uid://d0bhw3qcdbfe" path="res://scripts/UI elements/tutorial.gd" id="1_g2equ"]
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="2_6yjpi"]
 [ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="3_gbqnl"]
 [ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="4_ckvwl"]
@@ -9,78 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="7_gbqnl"]
 [ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="8_ckvwl"]
 [ext_resource type="Theme" uid="uid://b054jbhmyfyjs" path="res://themes/collectableText.tres" id="9_nlqja"]
-
-[sub_resource type="Animation" id="Animation_ckvwl"]
-resource_name = "collectFish"
-length = 2.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("collectFish/Score:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.56667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["SCORE: 0", "SCORE: 1"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("collectFish/net:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8, 2.29, 2.3),
-"transitions": PackedFloat32Array(0.75, 1, 1e-05, 1e-05),
-"update": 0,
-"values": [Vector2(246, 500), Vector2(246, 100), Vector2(246, 100), Vector2(246, 500)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("collectFish/fish:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.733333, 1.2, 2.3),
-"transitions": PackedFloat32Array(2.5, 2.5, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("collectFish/change:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.6, 2.3),
-"transitions": PackedFloat32Array(0.164939, 0.4, 2.5, 1),
-"update": 0,
-"values": [Vector2(811, 250), Vector2(811, 250), Vector2(811, 45), Vector2(811, 45)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("collectFish/change:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.5, 1.6, 2.3),
-"transitions": PackedFloat32Array(1, 0.225313, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
-}
+[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="10_0epgs"]
 
 [sub_resource type="Animation" id="Animation_nlqja"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("collectFish/Score:text")
+tracks/0/path = NodePath("Score:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -92,7 +29,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("collectFish/net:position")
+tracks/1/path = NodePath("net:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -104,7 +41,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("collectFish/fish:scale")
+tracks/2/path = NodePath("collectee:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -116,7 +53,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("collectFish/change:position")
+tracks/3/path = NodePath("points change:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -128,7 +65,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("collectFish/change:modulate")
+tracks/4/path = NodePath("points change:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -137,11 +74,100 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("healths/health change:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ckvwl"]
+resource_name = "collectItem"
+length = 2.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.56667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["SCORE: 0", "SCORE: 1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("net:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(0.75, 1),
+"update": 0,
+"values": [Vector2(246, 500), Vector2(246, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("collectee:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.733333, 1.2),
+"transitions": PackedFloat32Array(2.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("points change:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 1.6),
+"transitions": PackedFloat32Array(0.4, 2.5),
+"update": 0,
+"values": [Vector2(811, 250), Vector2(811, 45)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("points change:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2, 1.5, 1.6),
+"transitions": PackedFloat32Array(0.225313, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("healths/health change:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(1.4, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0epgs"]
 _data = {
 &"RESET": SubResource("Animation_nlqja"),
-&"collectFish": SubResource("Animation_ckvwl")
+&"collectItem": SubResource("Animation_ckvwl")
 }
 
 [node name="Tutorial" type="Control"]
@@ -153,6 +179,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_g2equ")
 
 [node name="BG" type="ColorRect" parent="."]
 z_index = -1
@@ -226,23 +253,43 @@ theme = ExtResource("5_cq4me")
 libraries = {
 &"": SubResource("AnimationLibrary_0epgs")
 }
+autoplay = "collectItem"
 
-[node name="collectFish" type="Control" parent="animations"]
-clip_contents = true
-layout_mode = 2
-anchors_preset = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 895.0
-offset_bottom = 495.0
+[node name="net" type="TextureRect" parent="animations"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 100.0
+offset_right = 584.0
+offset_bottom = 438.0
+texture = ExtResource("8_ckvwl")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="Score" type="Label" parent="animations/collectFish"]
+[node name="collectee" type="TextureRect" parent="animations"]
 layout_mode = 2
-offset_left = 732.0
-offset_top = 20.0
-offset_right = 860.0
-offset_bottom = 62.0
+offset_left = 200.0
+offset_top = 83.0
+offset_right = 424.0
+offset_bottom = 232.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(112, 74.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_gbqnl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Score" type="Label" parent="animations"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -163.0
+offset_top = 25.0
+offset_right = -35.0
+offset_bottom = 67.0
 grow_horizontal = 0
+pivot_offset = Vector2(128, 0)
 size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "SCORE: 1"
@@ -250,7 +297,7 @@ label_settings = ExtResource("6_6yjpi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="bg" type="ColorRect" parent="animations/collectFish/Score"]
+[node name="bg" type="ColorRect" parent="animations/Score"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -262,31 +309,44 @@ scale = Vector2(1.2, 1.2)
 pivot_offset = Vector2(64, 21)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
-[node name="net" type="TextureRect" parent="animations/collectFish"]
-layout_mode = 0
-offset_left = 246.0
-offset_top = 100.0
-offset_right = 584.0
-offset_bottom = 438.0
-texture = ExtResource("8_ckvwl")
-expand_mode = 1
+[node name="healths" type="Control" parent="animations"]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 895.0
+offset_bottom = 495.0
+
+[node name="health stay" type="TextureRect" parent="animations/healths"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 20.0
+offset_right = -31.0
+offset_bottom = 100.0
+grow_horizontal = 0
+texture = ExtResource("10_0epgs")
+expand_mode = 3
 stretch_mode = 4
 
-[node name="fish" type="TextureRect" parent="animations/collectFish"]
-layout_mode = 2
-offset_left = 195.0
-offset_top = 78.0
-offset_right = 419.0
-offset_bottom = 227.0
-scale = Vector2(1e-05, 1e-05)
-pivot_offset = Vector2(112, 74.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("7_gbqnl")
-expand_mode = 1
-stretch_mode = 5
+[node name="health change" type="TextureRect" parent="animations/healths"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -201.0
+offset_top = 20.0
+offset_right = -121.0
+offset_bottom = 100.0
+grow_horizontal = 0
+texture = ExtResource("10_0epgs")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="change" type="Label" parent="animations/collectFish"]
+[node name="points change" type="Label" parent="animations"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 811.0
@@ -296,15 +356,6 @@ offset_bottom = 99.0
 scale = Vector2(1.7, 1.7)
 theme = ExtResource("9_nlqja")
 text = "+1"
-
-[node name="dontCollectRock" type="Control" parent="animations"]
-visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 895.0
-offset_bottom = 495.0
 
 [node name="info" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -316,7 +367,7 @@ anchor_bottom = 0.5
 offset_left = 395.0
 offset_top = -185.0
 offset_right = 595.0
-offset_bottom = 115.0
+offset_bottom = 215.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_cq4me")
@@ -335,7 +386,18 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 25
 text = "Fish must be scooped up from below
 
-Netting a fish adds a point"
+Netting a fish adds a point See how many you can get!"
+autowrap_mode = 2
+
+[node name="rockCollectText" type="Label" parent="info/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Rocks can also be scooped
+
+But netting one breaks the net and uses a twine spool"
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
@@ -357,3 +419,4 @@ theme = ExtResource("2_6yjpi")
 text = "NEXT"
 
 [connection signal="button_up" from="main menu button" to="main menu button" method="_on_button_up"]
+[connection signal="button_up" from="Button" to="." method="_on_button_up"]
