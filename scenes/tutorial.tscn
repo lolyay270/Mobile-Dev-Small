@@ -1,0 +1,359 @@
+[gd_scene load_steps=13 format=3 uid="uid://co4cgnpy7pgut"]
+
+[ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_cq4me"]
+[ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="2_6yjpi"]
+[ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="3_gbqnl"]
+[ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="4_ckvwl"]
+[ext_resource type="Theme" uid="uid://ubllk6hasop0" path="res://themes/tutorialView.tres" id="5_cq4me"]
+[ext_resource type="LabelSettings" uid="uid://bvobu3r28jhvx" path="res://themes/sub heading label.tres" id="6_6yjpi"]
+[ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="7_gbqnl"]
+[ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="8_ckvwl"]
+[ext_resource type="Theme" uid="uid://b054jbhmyfyjs" path="res://themes/collectableText.tres" id="9_nlqja"]
+
+[sub_resource type="Animation" id="Animation_ckvwl"]
+resource_name = "collectFish"
+length = 2.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("collectFish/Score:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.56667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["SCORE: 0", "SCORE: 1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("collectFish/net:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 2.29, 2.3),
+"transitions": PackedFloat32Array(0.75, 1, 1e-05, 1e-05),
+"update": 0,
+"values": [Vector2(246, 500), Vector2(246, 100), Vector2(246, 100), Vector2(246, 500)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("collectFish/fish:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.733333, 1.2, 2.3),
+"transitions": PackedFloat32Array(2.5, 2.5, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("collectFish/change:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.6, 2.3),
+"transitions": PackedFloat32Array(0.164939, 0.4, 2.5, 1),
+"update": 0,
+"values": [Vector2(811, 250), Vector2(811, 250), Vector2(811, 45), Vector2(811, 45)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("collectFish/change:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.5, 1.6, 2.3),
+"transitions": PackedFloat32Array(1, 0.225313, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nlqja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("collectFish/Score:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["SCORE: 1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("collectFish/net:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(246, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("collectFish/fish:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("collectFish/change:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(811, 76)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("collectFish/change:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0epgs"]
+_data = {
+&"RESET": SubResource("Animation_nlqja"),
+&"collectFish": SubResource("Animation_ckvwl")
+}
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BG" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.196078)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -310.0
+offset_right = 275.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TUTORIAL"
+label_settings = ExtResource("1_cq4me")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="title"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(275, 41.5)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="main menu button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 390.0
+offset_bottom = 390.0
+scale = Vector2(0.2, 0.2)
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_6yjpi")
+icon = ExtResource("3_gbqnl")
+script = ExtResource("4_ckvwl")
+
+[node name="animations" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -185.0
+offset_right = 350.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_cq4me")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="animations"]
+libraries = {
+&"": SubResource("AnimationLibrary_0epgs")
+}
+
+[node name="collectFish" type="Control" parent="animations"]
+clip_contents = true
+layout_mode = 2
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 895.0
+offset_bottom = 495.0
+
+[node name="Score" type="Label" parent="animations/collectFish"]
+layout_mode = 2
+offset_left = 732.0
+offset_top = 20.0
+offset_right = 860.0
+offset_bottom = 62.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "SCORE: 1"
+label_settings = ExtResource("6_6yjpi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="animations/collectFish/Score"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(64, 21)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="net" type="TextureRect" parent="animations/collectFish"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 100.0
+offset_right = 584.0
+offset_bottom = 438.0
+texture = ExtResource("8_ckvwl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="fish" type="TextureRect" parent="animations/collectFish"]
+layout_mode = 2
+offset_left = 195.0
+offset_top = 78.0
+offset_right = 419.0
+offset_bottom = 227.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(112, 74.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_gbqnl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="change" type="Label" parent="animations/collectFish"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 811.0
+offset_top = 76.0
+offset_right = 851.0
+offset_bottom = 99.0
+scale = Vector2(1.7, 1.7)
+theme = ExtResource("9_nlqja")
+text = "+1"
+
+[node name="dontCollectRock" type="Control" parent="animations"]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 895.0
+offset_bottom = 495.0
+
+[node name="info" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 395.0
+offset_top = -185.0
+offset_right = 595.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_cq4me")
+
+[node name="MarginContainer" type="MarginContainer" parent="info"]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="fishCollectText" type="Label" parent="info/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Fish must be scooped up from below
+
+Netting a fish adds a point"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 460.0
+offset_top = 265.0
+offset_right = 536.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(76, 42)
+theme = ExtResource("2_6yjpi")
+text = "NEXT"
+
+[connection signal="button_up" from="main menu button" to="main menu button" method="_on_button_up"]

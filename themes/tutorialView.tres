@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ubllk6hasop0"]
+
+[ext_resource type="StyleBox" uid="uid://ch3ht4g48ko5t" path="res://themes/tutorialPanelOutline.tres" id="1_gg4pr"]
+
+[resource]
+Panel/styles/panel = ExtResource("1_gg4pr")
+PanelContainer/styles/panel = ExtResource("1_gg4pr")
