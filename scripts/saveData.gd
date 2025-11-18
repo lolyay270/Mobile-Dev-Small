@@ -7,11 +7,10 @@ https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html#saving-and
 extends Node
 
 var save_nodes = [GameManager]
-var saveFileLocation: String = "user://savegame.save"
+var saveFileLocation: String = "user://savegame.json"
 
 
 # Note: This can be called from anywhere inside the tree. This function is path independent.
-# Go through everything in the persist category and ask them to return a dict of relevant variables.
 func save_game():
 	var save_file = FileAccess.open(saveFileLocation, FileAccess.WRITE)
 	for node in save_nodes:
@@ -33,14 +32,13 @@ func save_game():
 
 
 
-# Note: This can be called from anywhere inside the tree. This function
-# is path independent.
+# Note: This can be called from anywhere inside the tree. This function is path independent.
 func load_game():
-	if not FileAccess.file_exists("user://savegame.save"):
+	if not FileAccess.file_exists(saveFileLocation):
 		return # Error! We don't have a save to load.
 	
 	# Load the file line by line and process that dictionary to restore the object it represents.
-	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var save_file = FileAccess.open(saveFileLocation, FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():
 		var json_string = save_file.get_line()
 		

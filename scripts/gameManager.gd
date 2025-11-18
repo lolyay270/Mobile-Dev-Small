@@ -23,10 +23,9 @@ func _ready() -> void:
 	SaveData.load_game()
 	preloadRequiredAssets()
 	
-	# create and save discoveries if not exist
-	if discovered.is_empty():
-		setupObjDiscoveries()
-		SaveData.save_game()
+	await get_tree().process_frame #wait for save to load
+	
+	setupObjDiscoveries()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,10 +60,12 @@ func preloadRequiredAssets():
 	rockResource = preload("res://objects/rock.tres")
 
 func setupObjDiscoveries():
-	for obj in fishResources:
-		discovered[obj.name] = 0
-	
-	discovered["Rock"] = 0
+	if discovered.is_empty():
+		for obj in fishResources:
+			discovered[obj.name] = 0
+		
+		discovered["Rock"] = 0
+		SaveData.save_game()
 
 func humanReadableRunTime() -> String:
 	var time: int = floori(runTime)
