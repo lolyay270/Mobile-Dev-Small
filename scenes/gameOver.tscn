@@ -293,14 +293,19 @@ libraries = {
 }
 
 [node name="newCollect" type="Label" parent="."]
-visible = false
 z_index = 2
-layout_mode = 2
-offset_left = 960.0
-offset_top = 420.0
-offset_right = 1285.0
-offset_bottom = 462.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -300.0
+offset_right = 5.0
+offset_bottom = -258.0
 grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 4
 size_flags_vertical = 0
