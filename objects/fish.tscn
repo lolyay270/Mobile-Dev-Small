@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://blwom5eoc3ybf"]
 
-[ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="1_5c8yu"]
 [ext_resource type="Script" uid="uid://rhrsowvv8kj1" path="res://scripts/flying objects/objGravity.gd" id="1_mmmkr"]
 [ext_resource type="Script" uid="uid://bpkn8fumnnasl" path="res://scripts/flying objects/objData.gd" id="1_rie47"]
 [ext_resource type="Script" uid="uid://mu6drrp7jy2a" path="res://scripts/flying objects/objPath.gd" id="2_r0mne"]
-[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="5_m1q5n"]
+[ext_resource type="Texture2D" uid="uid://cnjqwam64vrqb" path="res://assets/honeyGourami.png" id="4_6nqot"]
+[ext_resource type="Texture2D" uid="uid://io0mcbw0lllu" path="res://assets/waterDrop.png" id="5_6nqot"]
 [ext_resource type="Script" uid="uid://px0uis7j7ey6" path="res://scripts/flying objects/splashEffect.gd" id="6_6nqot"]
 
 [sub_resource type="Curve2D" id="Curve2D_rie47"]
@@ -15,7 +15,7 @@ _data = {
 point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0mne"]
-size = Vector2(165.261, 68.8446)
+size = Vector2(212.43, 91.1009)
 
 [node name="Fish" type="Node2D"]
 script = ExtResource("1_rie47")
@@ -31,19 +31,18 @@ loop = false
 script = ExtResource("1_mmmkr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("1_5c8yu")
+texture = ExtResource("4_6nqot")
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
-position = Vector2(9.38397, 1.70233)
+position = Vector2(11.9584, 15.4879)
 shape = SubResource("RectangleShape2D_r0mne")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Path2D/PathFollow2D"]
 emitting = false
 amount = 3
-texture = ExtResource("5_m1q5n")
+texture = ExtResource("5_6nqot")
 one_shot = true
 explosiveness = 0.9
 lifetime_randomness = 0.3
@@ -54,6 +53,6 @@ spread = 30.0
 gravity = Vector2(0, 100)
 initial_velocity_min = 150.0
 initial_velocity_max = 250.0
-scale_amount_min = 0.3
-scale_amount_max = 0.5
+scale_amount_min = 6.0
+scale_amount_max = 6.0
 script = ExtResource("6_6nqot")

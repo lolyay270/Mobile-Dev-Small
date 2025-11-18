@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ObjectStats" load_steps=3 format=3 uid="uid://dt6uidwi5lyuy"]
 
 [ext_resource type="Script" uid="uid://cdy545efpo2hw" path="res://scripts/objectStats.gd" id="1_65wwu"]
-[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="2_odq1q"]
+[ext_resource type="Texture2D" uid="uid://cnjqwam64vrqb" path="res://assets/honeyGourami.png" id="2_odq1q"]
 
 [resource]
 script = ExtResource("1_65wwu")

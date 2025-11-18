@@ -1,16 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://co4cgnpy7pgut"]
+[gd_scene load_steps=16 format=3 uid="uid://co4cgnpy7pgut"]
 
 [ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_cq4me"]
 [ext_resource type="Script" uid="uid://d0bhw3qcdbfe" path="res://scripts/UI elements/tutorial.gd" id="1_g2equ"]
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="2_6yjpi"]
+[ext_resource type="Texture2D" uid="uid://bfgtw6fhh60x5" path="res://assets/pexels-harsh-14658736-pixelated.png" id="2_tbcdj"]
 [ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="3_gbqnl"]
 [ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="4_ckvwl"]
 [ext_resource type="Theme" uid="uid://ubllk6hasop0" path="res://themes/tutorialView.tres" id="5_cq4me"]
 [ext_resource type="LabelSettings" uid="uid://bvobu3r28jhvx" path="res://themes/sub heading label.tres" id="6_6yjpi"]
-[ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="7_gbqnl"]
-[ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="8_ckvwl"]
+[ext_resource type="Texture2D" uid="uid://br6bjue26enx3" path="res://assets/rasbora.png" id="8_0epgs"]
+[ext_resource type="Texture2D" uid="uid://bh6i266tep8de" path="res://assets/net.png" id="8_ckvwl"]
 [ext_resource type="Theme" uid="uid://b054jbhmyfyjs" path="res://themes/collectableText.tres" id="9_nlqja"]
-[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="10_0epgs"]
+[ext_resource type="Texture2D" uid="uid://b46eokwx8vany" path="res://assets/twine.png" id="10_g2equ"]
 
 [sub_resource type="Animation" id="Animation_nlqja"]
 length = 0.001
@@ -181,15 +182,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_g2equ")
 
-[node name="BG" type="ColorRect" parent="."]
-z_index = -1
+[node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.196078)
+texture = ExtResource("2_tbcdj")
+expand_mode = 3
+stretch_mode = 6
 
 [node name="title" type="Label" parent="."]
 layout_mode = 1
@@ -275,7 +277,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(112, 74.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("7_gbqnl")
+texture = ExtResource("8_0epgs")
 expand_mode = 1
 stretch_mode = 5
 
@@ -328,7 +330,7 @@ offset_top = 20.0
 offset_right = -31.0
 offset_bottom = 100.0
 grow_horizontal = 0
-texture = ExtResource("10_0epgs")
+texture = ExtResource("10_g2equ")
 expand_mode = 3
 stretch_mode = 4
 
@@ -342,7 +344,7 @@ offset_top = 20.0
 offset_right = -121.0
 offset_bottom = 100.0
 grow_horizontal = 0
-texture = ExtResource("10_0epgs")
+texture = ExtResource("10_g2equ")
 expand_mode = 3
 stretch_mode = 4
 
@@ -386,7 +388,9 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 25
 text = "Fish must be scooped up from below
 
-Netting a fish adds a point See how many you can get!"
+Netting a fish adds a point 
+
+See how many you can get!"
 autowrap_mode = 2
 
 [node name="rockCollectText" type="Label" parent="info/MarginContainer"]

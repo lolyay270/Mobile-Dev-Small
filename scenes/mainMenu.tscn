@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhnv4r3pxpksy"]
+[gd_scene load_steps=7 format=3 uid="uid://dhnv4r3pxpksy"]
 
 [ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_48ign"]
+[ext_resource type="Texture2D" uid="uid://bfgtw6fhh60x5" path="res://assets/pexels-harsh-14658736-pixelated.png" id="1_clbkb"]
 [ext_resource type="LabelSettings" uid="uid://bvobu3r28jhvx" path="res://themes/sub heading label.tres" id="2_l7wge"]
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="3_7nrmo"]
 [ext_resource type="Script" uid="uid://da7hhtf23u7u8" path="res://scripts/UI elements/highScoreDisplay.gd" id="3_clbkb"]
@@ -14,15 +15,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="."]
-z_index = 1
+[node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.196078)
+texture = ExtResource("1_clbkb")
+expand_mode = 3
+stretch_mode = 6
 
 [node name="title" type="Label" parent="."]
 z_index = 2

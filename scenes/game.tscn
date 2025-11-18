@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://btxwjf1oh0f2p"]
 
 [ext_resource type="Script" uid="uid://b3gsvelmqx1yi" path="res://scripts/gameStart.gd" id="1_0tnpc"]
-[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_5khgj"]
 [ext_resource type="Script" uid="uid://chvvopsvkk6yx" path="res://scripts/flying objects/spawner.gd" id="2_31v75"]
+[ext_resource type="Texture2D" uid="uid://bfgtw6fhh60x5" path="res://assets/pexels-harsh-14658736-pixelated.png" id="2_ca42v"]
 [ext_resource type="Script" uid="uid://baigijg1auo7a" path="res://scripts/scoreManager.gd" id="2_p57ef"]
 [ext_resource type="Script" uid="uid://ol2o40kyrb2b" path="res://scripts/healthManager.gd" id="3_gee14"]
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="3_kvuet"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://wv408fvy0g0r" path="res://scripts/UI elements/runTime.gd" id="4_ir15t"]
 [ext_resource type="Script" uid="uid://d0wt1o6dh8yp4" path="res://scripts/playerTouch.gd" id="4_iywne"]
 [ext_resource type="Script" uid="uid://bqgwu72tyshgr" path="res://scripts/UI elements/scoreDisplay.gd" id="4_kvpfn"]
-[ext_resource type="Texture2D" uid="uid://bxk4agd7lba87" path="res://assets/nET.png" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://bh6i266tep8de" path="res://assets/net.png" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://24b5josru515" path="res://assets/curveArrow.png" id="4_trtic"]
 [ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="5_trtic"]
 [ext_resource type="Script" uid="uid://cqm8c6xroe5wf" path="res://scripts/net.gd" id="6_p57ef"]
@@ -26,6 +26,17 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_0tnpc")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ca42v")
+expand_mode = 3
+stretch_mode = 6
 
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource("2_31v75")
@@ -47,7 +58,7 @@ vertical_alignment = 1
 script = ExtResource("4_ir15t")
 
 [node name="bg" type="ColorRect" parent="Time"]
-z_index = -1
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,6 +70,7 @@ pivot_offset = Vector2(136.5, 21)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
 [node name="Score" type="Label" parent="."]
+z_index = 2
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -92,7 +104,7 @@ vertical_alignment = 1
 script = ExtResource("2_p57ef")
 
 [node name="bg" type="ColorRect" parent="Score"]
-z_index = -1
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,6 +119,7 @@ color = Color(0.6175, 0.65075, 0.95, 1)
 script = ExtResource("3_gee14")
 
 [node name="Display" type="Control" parent="Health"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -114,26 +127,12 @@ anchor_right = 1.0
 grow_horizontal = 0
 script = ExtResource("3_u5sy4")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch_mode = 3
-
-[node name="background" type="TextureRect" parent="AspectRatioContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("1_5khgj")
-
 [node name="Player Touch" type="Node2D" parent="."]
 script = ExtResource("4_iywne")
 
 [node name="net" type="Sprite2D" parent="Player Touch"]
-position = Vector2(-64, -69)
-scale = Vector2(0.261724, 0.261724)
+position = Vector2(-42, -48)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_lbhrr")
 script = ExtResource("6_p57ef")
 
@@ -141,9 +140,10 @@ script = ExtResource("6_p57ef")
 position = Vector2(-179.578, -252.174)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player Touch/net/Area2D"]
-polygon = PackedVector2Array(-149.012, -30.5665, -22.9249, -106.983, 156.654, 38.2082, 15.2833, 160.474)
+polygon = PackedVector2Array(-60.422, 85.5073, 139.578, 8.84067, 116.245, 222.174, -12.0887, 275.507)
 
 [node name="main menu button" type="Button" parent="."]
+z_index = 2
 layout_mode = 1
 offset_left = 30.0
 offset_top = 30.0

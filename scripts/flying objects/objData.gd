@@ -8,3 +8,4 @@ func setStats(script: Resource):
 	
 	#update sprite
 	sprite.texture = stats.sprite
+	sprite.scale = Vector2(0.8, 0.8)
