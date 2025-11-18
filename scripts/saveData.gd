@@ -70,3 +70,4 @@ func load_game():
 func clearSaveData():
 	GameManager.highScore = 0
 	GameManager.discovered.clear()
+	save_game()

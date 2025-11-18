@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhnv4r3pxpksy"]
+[gd_scene load_steps=8 format=3 uid="uid://dhnv4r3pxpksy"]
 
 [ext_resource type="LabelSettings" uid="uid://2gbyhnsfxrd8" path="res://themes/title label.tres" id="1_48ign"]
 [ext_resource type="Texture2D" uid="uid://bfgtw6fhh60x5" path="res://assets/pexels-harsh-14658736-pixelated.png" id="1_clbkb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://cv4hxqc66pyku" path="res://themes/option buttons/option buttons.tres" id="3_7nrmo"]
 [ext_resource type="Script" uid="uid://da7hhtf23u7u8" path="res://scripts/UI elements/highScoreDisplay.gd" id="3_clbkb"]
 [ext_resource type="Script" uid="uid://dav5rnbek6wak" path="res://scripts/UI elements/loadSceneButton.gd" id="4_l7wge"]
+[ext_resource type="Script" uid="uid://dgwi5iswrq8h4" path="res://scripts/UI elements/deleteSaveButton.gd" id="7_ldpc3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -160,6 +161,96 @@ text = "COLLECTION"
 script = ExtResource("4_l7wge")
 sceneToLoad = "res://scenes/collection.tscn"
 
+[node name="delete save" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1074.2
+offset_top = 612.4
+offset_right = 1114.2
+offset_bottom = 652.4
+script = ExtResource("7_ldpc3")
+
+[node name="button" type="Button" parent="delete save"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.2
+offset_top = -28.4
+offset_right = 122.8
+offset_bottom = 55.6
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(76, 42)
+theme = ExtResource("3_7nrmo")
+text = "DELETE 
+SAVE DATA"
+
+[node name="are you sure" type="ColorRect" parent="delete save"]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.2
+offset_top = -201.4
+offset_right = 152.8
+offset_bottom = -43.4
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(120.5, 0)
+color = Color(0.6175, 0.65075, 0.95, 1)
+
+[node name="Label" type="Label" parent="delete save/are you sure"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "Are you sure?"
+horizontal_alignment = 1
+
+[node name="yes" type="Button" parent="delete save/are you sure"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -31.0
+offset_right = 36.5
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_7nrmo")
+text = "YES"
+
+[node name="no" type="Button" parent="delete save/are you sure"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = 27.0
+offset_right = 36.5
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_7nrmo")
+text = "NO"
+
 [connection signal="button_up" from="SELECTIONS/play" to="SELECTIONS/play" method="_on_button_up"]
 [connection signal="button_up" from="SELECTIONS/tutorial" to="SELECTIONS/tutorial" method="_on_button_up"]
 [connection signal="button_up" from="SELECTIONS/collection2" to="SELECTIONS/collection2" method="_on_button_up"]
+[connection signal="button_up" from="delete save/button" to="delete save" method="_on_toggle_button_up"]
+[connection signal="button_up" from="delete save/are you sure/yes" to="delete save" method="_on_yes_button_up"]
+[connection signal="button_up" from="delete save/are you sure/no" to="delete save" method="_on_no_button_up"]

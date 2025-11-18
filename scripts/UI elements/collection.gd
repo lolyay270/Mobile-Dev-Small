@@ -5,6 +5,9 @@ extends GridContainer
 var collectables: Array
 
 func _ready() -> void:
+	if GameManager.discovered.is_empty():
+		GameManager.setupObjDiscoveries()
+	
 	# get all objects to show, ensure rock is last
 	collectables.append_array(GameManager.fishResources)
 	collectables.append(GameManager.rockResource)

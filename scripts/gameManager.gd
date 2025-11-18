@@ -23,8 +23,6 @@ func _ready() -> void:
 	SaveData.load_game()
 	preloadRequiredAssets()
 	
-	#SaveData.clearSaveData()
-	
 	# create and save discoveries if not exist
 	if discovered.is_empty():
 		setupObjDiscoveries()
@@ -42,6 +40,7 @@ func UpdatePlayState(value: bool):
 
 
 func ResetToDefault():
+	setupObjDiscoveries()
 	UpdatePlayState(true)
 	runTime = 0
 
