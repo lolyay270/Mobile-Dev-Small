@@ -10,5 +10,3 @@ func ChangePath(xDist: float, jumpHigh: float):
 	curve.set_point_out(1, Vector2(xDist / 2 * 0.75, 0))
 	
 	curve.set_point_position(2, Vector2(xDist, position.y))
-	
-	#print(str(curve.get_point_position(0)) + " - " + str(curve.get_point_position(1)) + " - " + str(curve.get_point_position(2)))

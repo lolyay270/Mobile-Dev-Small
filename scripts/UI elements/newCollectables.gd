@@ -11,9 +11,6 @@ func _ready() -> void:
 		newCollectHeading.hide()
 	
 	else:
-		print("objs:  ", objs)
-		print("size:  ", objs.size())
-		
 		newCollectHeading.show()
 		
 		# adjust columns to fit the number of fish
