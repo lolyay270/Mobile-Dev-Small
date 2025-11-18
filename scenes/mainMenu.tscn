@@ -97,15 +97,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = 60.0
 offset_right = 250.0
-offset_bottom = 260.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(250, 0)
 color = Color(0.6175, 0.65075, 0.95, 1)
 
-[node name="new game" type="Button" parent="SELECTIONS"]
+[node name="play" type="Button" parent="SELECTIONS"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -113,9 +112,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -150.0
-offset_top = -70.0
+offset_top = -110.0
 offset_right = 150.0
-offset_bottom = -20.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_7nrmo")
@@ -123,7 +122,7 @@ text = "PLAY"
 script = ExtResource("4_l7wge")
 sceneToLoad = "res://scenes/game.tscn"
 
-[node name="collection" type="Button" parent="SELECTIONS"]
+[node name="tutorial" type="Button" parent="SELECTIONS"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,9 +130,27 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -150.0
-offset_top = 15.0
+offset_top = -25.0
 offset_right = 150.0
-offset_bottom = 65.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_7nrmo")
+text = "TUTORIAL"
+script = ExtResource("4_l7wge")
+sceneToLoad = "res://scenes/tutorial.tscn"
+
+[node name="collection2" type="Button" parent="SELECTIONS"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_7nrmo")
@@ -141,5 +158,6 @@ text = "COLLECTION"
 script = ExtResource("4_l7wge")
 sceneToLoad = "res://scenes/collection.tscn"
 
-[connection signal="button_up" from="SELECTIONS/new game" to="SELECTIONS/new game" method="_on_button_up"]
-[connection signal="button_up" from="SELECTIONS/collection" to="SELECTIONS/collection" method="_on_button_up"]
+[connection signal="button_up" from="SELECTIONS/play" to="SELECTIONS/play" method="_on_button_up"]
+[connection signal="button_up" from="SELECTIONS/tutorial" to="SELECTIONS/tutorial" method="_on_button_up"]
+[connection signal="button_up" from="SELECTIONS/collection2" to="SELECTIONS/collection2" method="_on_button_up"]
