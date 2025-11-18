@@ -13,7 +13,10 @@ config_version=5
 config/name="Fish Collector"
 run/main_scene="uid://btxwjf1oh0f2p"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/image="uid://cnjqwam64vrqb"
+config/icon="uid://br6bjue26enx3"
+run/icon="res://icon.svg"
+run/image=""
 
 [autoload]
 

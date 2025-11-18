@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bsw0xxj4d5f00"]
 
-[ext_resource type="Texture2D" uid="uid://dlwxtr2ykoync" path="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png" id="1_5c8yu"]
 [ext_resource type="Script" uid="uid://rhrsowvv8kj1" path="res://scripts/flying objects/objGravity.gd" id="1_mmmkr"]
 [ext_resource type="Script" uid="uid://bpkn8fumnnasl" path="res://scripts/flying objects/objData.gd" id="1_rie47"]
 [ext_resource type="Script" uid="uid://mu6drrp7jy2a" path="res://scripts/flying objects/objPath.gd" id="2_r0mne"]
+[ext_resource type="Texture2D" uid="uid://br6bjue26enx3" path="res://assets/rasbora.png" id="4_r0mne"]
 
 [sub_resource type="Curve2D" id="Curve2D_rie47"]
 resource_local_to_scene = true
@@ -29,8 +29,8 @@ loop = false
 script = ExtResource("1_mmmkr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("1_5c8yu")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_r0mne")
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
 

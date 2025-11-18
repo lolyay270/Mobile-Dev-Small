@@ -7,7 +7,14 @@ What type, spawn location, and path each object has
 extends Node
 
 @onready var viewportSize = get_viewport().size
-@onready var fish1: PackedScene = preload("res://objects/fish.tscn")
+@onready var fishPrefab: PackedScene = preload("res://objects/fish.tscn")
+
+@onready var rasboraSprite: CompressedTexture2D = preload("res://assets/rasbora.png")
+@onready var gouramiSprite: CompressedTexture2D = preload("res://assets/honeyGourami.png")
+@onready var tetraSprite: CompressedTexture2D = preload("res://assets/rummyNose.png")
+@onready var rockSprite: CompressedTexture2D = preload("res://assets/rock.png")
+
+
 
 const minTime: float = .1
 const maxTime: float = 1
@@ -40,15 +47,16 @@ func _process(delta: float) -> void:
 	if (lastSpawn + delay <= GameManager.runTime):
 		
 		#spawn object
-		var fish = fish1.instantiate()
+		var fish = fishPrefab.instantiate()
 		var path: Path2D = fish.get_child(0)
 		var pathFollow: PathFollow2D = path.get_child(0)
+		var sprite: Sprite2D = pathFollow.get_child(0)
 		
 		self.add_child(fish)
 		
 		ChangeFishSpawn(fish)
 		ChangeFishEnd(fish, path)
-		RandomType(fish)
+		RandomType(fish, sprite)
 		
 		pathFollow.Start()
 		
@@ -95,18 +103,25 @@ func ChangeFishEnd(fish: Node2D, path: Path2D):
 	path.ChangePath(xDist, yDist)
 
 
-func RandomType(fish: Node2D):
+func RandomType(fish: Node2D, sprite: Sprite2D):
 	var fishChance = (1 - bombChance) / 3
 	var rand = randf()
 	
 	if rand < bombChance:
 		fish.type = GameManager.ObjectTypes.Bomb
+		sprite.texture = rockSprite
+	
 	elif rand < bombChance + fishChance:
 		fish.type = GameManager.ObjectTypes.Rasbora
+		sprite.texture = rasboraSprite
+	
 	elif rand < bombChance + fishChance * 2:
 		fish.type = GameManager.ObjectTypes.Gourami
+		sprite.texture = gouramiSprite
+	
 	else:
 		fish.type = GameManager.ObjectTypes.Tetra
+		sprite.texture = tetraSprite
 
 
 func SetRandomDelay() -> void:
