@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lqtglo160pvj"
-path="res://.godot/imported/nET.png-71fefd0e85eb3d88160e5ebd150eb06d.ctex"
+uid="uid://clf580iag23ll"
+path="res://.godot/imported/rummyNose.png-46c5e64c5d781e8fd4bded1032008cd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/nET.png"
-dest_files=["res://.godot/imported/nET.png-71fefd0e85eb3d88160e5ebd150eb06d.ctex"]
+source_file="res://assets/rummyNose.png"
+dest_files=["res://.godot/imported/rummyNose.png-46c5e64c5d781e8fd4bded1032008cd9.ctex"]
 
 [params]
 

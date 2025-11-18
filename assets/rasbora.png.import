@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lqtglo160pvj"
-path="res://.godot/imported/nET.png-71fefd0e85eb3d88160e5ebd150eb06d.ctex"
+uid="uid://br6bjue26enx3"
+path="res://.godot/imported/rasbora.png-35d13f09ed5d3f7c65955b7c99f62288.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/nET.png"
-dest_files=["res://.godot/imported/nET.png-71fefd0e85eb3d88160e5ebd150eb06d.ctex"]
+source_file="res://assets/rasbora.png"
+dest_files=["res://.godot/imported/rasbora.png-35d13f09ed5d3f7c65955b7c99f62288.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lqtglo160pvj"
-path="res://.godot/imported/nET.png-71fefd0e85eb3d88160e5ebd150eb06d.ctex"
+uid="uid://bfgtw6fhh60x5"
+path="res://.godot/imported/pexels-harsh-14658736-pixelated.png-6aa80209bd320466902406f31eb531b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/nET.png"
-dest_files=["res://.godot/imported/nET.png-71fefd0e85eb3d88160e5ebd150eb06d.ctex"]
+source_file="res://assets/pexels-harsh-14658736-pixelated.png"
+dest_files=["res://.godot/imported/pexels-harsh-14658736-pixelated.png-6aa80209bd320466902406f31eb531b3.ctex"]
 
 [params]
 

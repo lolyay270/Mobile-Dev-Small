@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlwxtr2ykoync"
-path="res://.godot/imported/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png-3dcd7923cfc59c97da7e9713431a56de.ctex"
+uid="uid://cnjqwam64vrqb"
+path="res://.godot/imported/honeyGourami.png-db59a564db7f332874f5c4968f6681a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png"
-dest_files=["res://.godot/imported/Harlequin Rasbora (Trigonostigma heteromorpha) - Dan's Fish.png-3dcd7923cfc59c97da7e9713431a56de.ctex"]
+source_file="res://assets/honeyGourami.png"
+dest_files=["res://.godot/imported/honeyGourami.png-db59a564db7f332874f5c4968f6681a3.ctex"]
 
 [params]
 
