@@ -19,7 +19,7 @@ var ySpawnPos: float # spawn location of fish object
 var jumpHeightMax: float # how much of the screen height the fish is allowed to jump
 var minDistances: Vector2 # percent of screen that is minimum distances traveled
 
-const bombChance: float = 0.05 # chance of bomb spawning 
+const bombChance: float = 0.9#0.05 # chance of bomb spawning 
 
 var delay: float
 var lastSpawn: float = 0
