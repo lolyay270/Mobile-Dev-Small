@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh6i266tep8de"
-path="res://.godot/imported/net.png-0f5a02c351f57ded2769326448c7aec2.ctex"
+uid="uid://io0mcbw0lllu"
+path="res://.godot/imported/waterDrop.png-5417f1c402ad6f259272b29dd8a96116.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/net.png"
-dest_files=["res://.godot/imported/net.png-0f5a02c351f57ded2769326448c7aec2.ctex"]
+source_file="res://assets/waterDrop.png"
+dest_files=["res://.godot/imported/waterDrop.png-5417f1c402ad6f259272b29dd8a96116.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh6i266tep8de"
-path="res://.godot/imported/net.png-0f5a02c351f57ded2769326448c7aec2.ctex"
+uid="uid://b46eokwx8vany"
+path="res://.godot/imported/twine.png-005b5d390a68d45bfc7007523e713ecb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/net.png"
-dest_files=["res://.godot/imported/net.png-0f5a02c351f57ded2769326448c7aec2.ctex"]
+source_file="res://assets/twine.png"
+dest_files=["res://.godot/imported/twine.png-005b5d390a68d45bfc7007523e713ecb.ctex"]
 
 [params]
 
