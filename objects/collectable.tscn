@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b05jsafbt3667"]
 
 [ext_resource type="Script" uid="uid://djpt64f12xccq" path="res://scripts/UI elements/collectable.gd" id="1_5dljs"]
-[ext_resource type="Texture2D" uid="uid://dkh021bwgv0om" path="res://icon.svg" id="1_46kdt"]
+[ext_resource type="Texture2D" uid="uid://cnjqwam64vrqb" path="res://assets/honeyGourami.png" id="2_bdmrf"]
 [ext_resource type="Theme" uid="uid://b054jbhmyfyjs" path="res://themes/collectableText.tres" id="3_bdmrf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dljs"]
@@ -18,7 +18,7 @@ script = ExtResource("1_5dljs")
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_46kdt")
+texture = ExtResource("2_bdmrf")
 expand_mode = 2
 stretch_mode = 5
 

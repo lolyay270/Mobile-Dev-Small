@@ -7,13 +7,13 @@ extends PanelContainer
 
 func setStats(res: Resource):
 	stats = res
+	sprite.texture = stats.sprite
 	
 	# only if discovered, show full info
 	if GameManager.discovered.get(stats.name) > 0:
-		sprite.texture = stats.sprite
 		fishName.text = stats.name
 		collectedCounter.text = str(roundi(GameManager.discovered.get(stats.name))) + " caught"
 	else:
-		sprite.texture = stats.silhouette
+		sprite.modulate = Color.BLACK
 		fishName.text = "???"
 		collectedCounter.hide()
